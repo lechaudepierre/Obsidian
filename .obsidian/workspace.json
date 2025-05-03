@@ -81,16 +81,42 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ELEC-H473/Exams questions/Chapter 2 C and assembly code.md",
+                "file": "INFO-F422/V1 projet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 2 C and assembly code"
+              "title": "V1 projet"
+            }
+          },
+          {
+            "id": "2687d6e9dc5ed0b9",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
+            }
+          },
+          {
+            "id": "05e68923d8446148",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ELEC-H473/synthese/Chap 3 syntheses Basic processor architecture and the execution mode.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Chap 3 syntheses Basic processor architecture and the execution mode"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -244,10 +270,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a97ef5a0a886d786",
+  "active": "05e68923d8446148",
   "lastOpenFiles": [
-    "ELEC-H473/Exams questions/Chapter 1  Logic Circuits.md",
+    "Excalidraw/Drawing 2025-05-03 09.41.36.excalidraw.md",
+    "ELEC-H473/synthese/Chap 3 syntheses Basic processor architecture and the execution mode.md",
+    "Excalidraw",
     "ELEC-H473/Exams questions/Chapter 2 C and assembly code.md",
+    "ELEC-H473/Exams questions/Chapter 3 Basic processor architecture and the execution mode.md",
+    "ELEC-H473/Exams questions/Chapter 1  Logic Circuits.md",
+    "ELEC-H473/synthese",
     "INFO-F422/V1 projet.md",
     "ELEC-H473/Exams questions",
     "ELEC-H473",
