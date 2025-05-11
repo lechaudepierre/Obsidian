@@ -93,6 +93,9 @@ Used to identify patterns or features within images.
 $$f(x)\circ g(x) \Leftrightarrow F^*(u)G(u)$$
 Allows to perform correlation in the frequency domain, often resulting in faster computations.  
 ![[Pasted image 20250127112812.png | 500]]
+***
+
+
 
 
 ### Non-linear filters
