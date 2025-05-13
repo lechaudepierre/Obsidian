@@ -4,243 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "a3896489b5e1a031",
+        "id": "f3d315f5c2997b80",
         "type": "tabs",
         "children": [
           {
-            "id": "f2fa0260ca87540f",
+            "id": "a91a0e1345226c11",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "INFO-H500/Question INFO-H500.md",
+                "file": "INFO-H410/Synthese Biological algo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Question INFO-H500"
-            }
-          },
-          {
-            "id": "3650c6a1cbef11c4",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.4"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.4"
-            }
-          },
-          {
-            "id": "816c11ae3a7fd340",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "INFO-H413/Synthèse Multi-objective optimization.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Synthèse Multi-objective optimization"
-            }
-          },
-          {
-            "id": "18e4323f19f4f07e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "INFO-F422/V1 projet.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "V1 projet"
-            }
-          },
-          {
-            "id": "445d624bcc5012de",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ELEC-H473/Exams questions/Chapter 1  Logic Circuits.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 1  Logic Circuits"
-            }
-          },
-          {
-            "id": "46a338d2cd635aa8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "INFO-F422/V1 projet.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "V1 projet"
-            }
-          },
-          {
-            "id": "05e68923d8446148",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ELEC-H473/Exams questions/Chapter 3 Basic processor architecture and the execution mode.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 3 Basic processor architecture and the execution mode"
-            }
-          },
-          {
-            "id": "d83dad1e7beb1a94",
-            "type": "leaf",
-            "state": {
-              "type": "planner-release-notes",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Day Planner Release 0.27.0"
-            }
-          },
-          {
-            "id": "14e39437c694a90e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "INFO-F422/V2 projet.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "V2 projet"
-            }
-          },
-          {
-            "id": "678756527a709fd4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ELEC-H473/synthese/Chapter 6 Data parallelism SIMD.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 6 Data parallelism SIMD"
-            }
-          },
-          {
-            "id": "258bc1058cc1ec81",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ELEC-H473/synthese/Chapter 7 programming in SIMD.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 7 programming in SIMD"
-            }
-          },
-          {
-            "id": "3715c9953dbf3c9a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ELEC-H473/synthese/Chapter 7 programming in SIMD.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 7 programming in SIMD"
-            }
-          },
-          {
-            "id": "4758418c8a7eb7c5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ELEC-H473/synthese/Chapter 10 security.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 10 security"
-            }
-          },
-          {
-            "id": "ea7c650d42584c63",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "INFO-H410/INFO-H410 Synthese cours 1-5.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "INFO-H410 Synthese cours 1-5"
-            }
-          },
-          {
-            "id": "a6a25442e3779ea1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "graphe.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "graphe"
-            }
-          },
-          {
-            "id": "1e050946b4465cea",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "INFO-H410/Synthese chap text mining.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Synthese chap text mining"
-            }
-          },
-          {
-            "id": "062e172f52a7f8d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ELEC-H473/synthese/Chapter 11 security side channels.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 11 security side channels"
+              "title": "Synthese Biological algo"
             }
           }
-        ],
-        "currentTab": 15
+        ]
       }
     ],
     "direction": "vertical"
@@ -297,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "15caee76fb3f38aa",
@@ -360,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "INFO-H410/Synthese chap text mining.md",
+                "file": "synthese neural networks.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Plan de Synthese chap text mining"
+              "title": "Plan de synthese neural networks"
             }
           },
           {
@@ -421,19 +201,25 @@
       "obsidian-day-planner:Open Multi-Day View": false
     }
   },
-  "active": "2004a8c5bf1679dc",
+  "active": "a97ef5a0a886d786",
   "lastOpenFiles": [
-    "graphe.md",
     "INFO-H410/Synthese chap text mining.md",
+    "INFO-H410/Synthese data mining.md",
+    "INFO-H410/Synthese Biological algo.md",
     "2025-W18.md",
+    "graphe.md",
+    "INFO-H410/synthese neural networks.md",
     "INFO-H410/INFO-H410 Synthese cours 1-5.md",
     "ELEC-H473/synthese/Chapter 10 security.md",
-    "INFO-H410",
-    "ELEC-H473/synthese/Chapter 11 security side channels.md",
     "ELEC-H473/synthese/Chapter 7 programming in SIMD.md",
     "ELEC-H473/synthese/Chapter 6 Data parallelism SIMD.md",
-    "ELEC-H473/Exams questions/Chapter 7 Programming in SIMD.md",
     "INFO-F422/V2 projet.md",
+    "ELEC-H473/Exams questions/Chapter 3 Basic processor architecture and the execution mode.md",
+    "INFO-F422/V1 projet.md",
+    "ELEC-H473/Exams questions/Chapter 1  Logic Circuits.md",
+    "ELEC-H473/synthese/Chapter 11 security side channels.md",
+    "INFO-H410",
+    "ELEC-H473/Exams questions/Chapter 7 Programming in SIMD.md",
     "Excalidraw/Drawing 2025-05-03 09.41.36.excalidraw.md",
     "Images/Pasted image 20250127143731.png",
     "Images/Pasted image 20250127131300.png",
@@ -441,15 +227,12 @@
     "Images/Pasted image 20250127111335.png",
     "INFO-H500/Question INFO-H500.md",
     "INFO-H413/Synthèse Multi-objective optimization.md",
-    "INFO-F422/V1 projet.md",
     "ELEC-H473/synthese/Chapter 5 syntheses memory subsystem.md",
     "Sans titre.canvas",
     "2025-05-03.md",
-    "ELEC-H473/Exams questions/Chapter 3 Basic processor architecture and the execution mode.md",
     "ELEC-H473/synthese/Chap 3 syntheses Basic processor architecture and the execution mode.md",
     "Excalidraw",
     "ELEC-H473/Exams questions/Chapter 2 C and assembly code.md",
-    "ELEC-H473/Exams questions/Chapter 1  Logic Circuits.md",
     "ELEC-H473/synthese",
     "ELEC-H473/Exams questions",
     "ELEC-H473",
