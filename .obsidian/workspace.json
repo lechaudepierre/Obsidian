@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a91a0e1345226c11",
+            "id": "73f3843174fb22fd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "INFO-H410/Synthese Biological algo.md",
+                "file": "Synthèse non-linear algorithms.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Synthese Biological algo"
+              "title": "Synthèse non-linear algorithms"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "15caee76fb3f38aa",
@@ -201,38 +202,44 @@
       "obsidian-day-planner:Open Multi-Day View": false
     }
   },
-  "active": "a97ef5a0a886d786",
+  "active": "73f3843174fb22fd",
   "lastOpenFiles": [
-    "INFO-H410/Synthese chap text mining.md",
-    "INFO-H410/Synthese data mining.md",
-    "INFO-H410/Synthese Biological algo.md",
-    "2025-W18.md",
-    "graphe.md",
-    "INFO-H410/synthese neural networks.md",
-    "INFO-H410/INFO-H410 Synthese cours 1-5.md",
-    "ELEC-H473/synthese/Chapter 10 security.md",
+    "INFO-H413/TP5 heuristic.md",
+    "INFO-H413/Synthèse Multi-objective optimization.md",
+    "INFO-F422/synthèse/Synthese linear regression.md",
+    "INFO-F422/synthèse/synthese non-parametric estimation.md",
+    "INFO-F422/synthèse/synthèse parametric esimation.md",
+    "INFO-F422/synthèse/Synthese foundation of probability.md",
+    "INFO-F422/Projet/V1 projet.md",
+    "Synthèse non-linear algorithms.md",
+    "INFO-F422/synthèse",
+    "INFO-F422/Projet/V2 projet.md",
+    "INFO-F422/Projet",
     "ELEC-H473/synthese/Chapter 7 programming in SIMD.md",
-    "ELEC-H473/synthese/Chapter 6 Data parallelism SIMD.md",
-    "INFO-F422/V2 projet.md",
-    "ELEC-H473/Exams questions/Chapter 3 Basic processor architecture and the execution mode.md",
-    "INFO-F422/V1 projet.md",
-    "ELEC-H473/Exams questions/Chapter 1  Logic Circuits.md",
     "ELEC-H473/synthese/Chapter 11 security side channels.md",
-    "INFO-H410",
+    "ELEC-H473/synthese/Chapter 10 security.md",
     "ELEC-H473/Exams questions/Chapter 7 Programming in SIMD.md",
-    "Excalidraw/Drawing 2025-05-03 09.41.36.excalidraw.md",
+    "INFO-H410/Synthese reinforcement learning.md",
+    "INFO-H410/Synthese Biological algo.md",
+    "ELEC-H473/synthese/Chapter 6 Data parallelism SIMD.md",
+    "ELEC-H473/synthese/Chap 3 syntheses Basic processor architecture and the execution mode.md",
+    "ELEC-H473/Exams questions/Chapter 3 Basic processor architecture and the execution mode.md",
+    "ELEC-H473/Exams questions/Chapter 2 C and assembly code.md",
+    "ELEC-H473/Exams questions/Chapter 1  Logic Circuits.md",
+    "INFO-F424/Synthese branch and bound.md",
+    "INFO-F424/Synthese Optimality, Relaxations and Bounds.md",
+    "INFO-F424",
+    "INFO-H410/Synthese data mining.md",
+    "INFO-H410/synthese neural networks.md",
+    "INFO-H410/Synthese chap text mining.md",
+    "2025-W18.md",
+    "INFO-H410",
     "Images/Pasted image 20250127143731.png",
     "Images/Pasted image 20250127131300.png",
     "Images/Pasted image 20250127111155.png",
     "Images/Pasted image 20250127111335.png",
-    "INFO-H500/Question INFO-H500.md",
-    "INFO-H413/Synthèse Multi-objective optimization.md",
-    "ELEC-H473/synthese/Chapter 5 syntheses memory subsystem.md",
     "Sans titre.canvas",
-    "2025-05-03.md",
-    "ELEC-H473/synthese/Chap 3 syntheses Basic processor architecture and the execution mode.md",
     "Excalidraw",
-    "ELEC-H473/Exams questions/Chapter 2 C and assembly code.md",
     "ELEC-H473/synthese",
     "ELEC-H473/Exams questions",
     "ELEC-H473",
@@ -243,8 +250,6 @@
     "Images/Pasted image 20250127162428.png",
     "Images/Pasted image 20250127145811.png",
     "Images/Pasted image 20250127145756.png",
-    "Images/Pasted image 20250127145425.png",
-    "Obsidian",
-    "Images"
+    "Images/Pasted image 20250127145425.png"
   ]
 }
