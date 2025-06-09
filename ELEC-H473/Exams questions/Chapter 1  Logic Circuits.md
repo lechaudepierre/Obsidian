@@ -12,7 +12,7 @@ Voici les réponses aux questions identifiées dans les diapositives du document
     
     - **R :** En utilisant la formule 2(2k) :
         
-        - **0-aire (k=0) :** 2(20)=21=2 opérateurs (constantes 0 et 1).
+        - **0-aire (k=0) :** $2^{2^0}$=21=2 opérateurs (constantes 0 et 1).
             
         - **1-aire (k=1) :** 2(21)=22=4 opérateurs (identité, négation, constante 0, constante 1).
             

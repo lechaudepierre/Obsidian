@@ -78,7 +78,7 @@ Hardware can provide security through various features:
     - Provides protected enclaves within an application's address space.
         
     - Uses memory encryption and restricted entry points (call gates).
-        
+          
     - Supports remote attestation via a complex infrastructure involving provisioning services and attestation services managed by Intel.
         
 - **Sancus:**
