@@ -214,7 +214,7 @@ Where:
 
 **Probability of Selecting Next Node:**
 The probability $p_{ij}^{k}(t)$ that ant $k$ currently at node $i$ chooses to move to node $j$ (where $j \in \mathcal{N}_{i}^{k}$, the set of feasible neighbor nodes) is given by:
-$p_{ij}^{k}(t) = \frac{[\tau_{ij}(t)]^{\alpha} \cdot [\eta_{ij}]^{\beta}}{\sum_{l \in \mathcal{N}_{i}^{k}} [\tau_{il}(t)]^{\alpha} \cdot [\eta_{il}]^{\beta}}$
+$$p_{ij}^{k}(t) = \frac{[\tau_{ij}(t)]^{\alpha} \cdot [\eta_{ij}]^{\beta}}{\sum_{l \in \mathcal{N}_{i}^{k}} [\tau_{il}(t)]^{\alpha} \cdot [\eta_{il}]^{\beta}}$$
 Where:
 * $\tau_{ij}(t)$ is the pheromone intensity on edge $(i,j)$.
 * $\eta_{ij}$ is **heuristic information** (a priori desirability of moving from $i$ to $j$). For TSP, $\eta_{ij} = 1/d_{ij}$ (where $d_{ij}$ is the distance between city $i$ and city $j$).
