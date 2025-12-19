@@ -78,6 +78,18 @@
             }
           },
           {
+            "id": "5d81dcd7605246a3",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.6"
+            }
+          },
+          {
             "id": "4b7e71124a0fd314",
             "type": "leaf",
             "state": {
@@ -92,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -115,7 +127,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Explorateur de fichiers"
+              "title": "Files"
             }
           },
           {
@@ -259,12 +271,13 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Ouvrir le sélecteur rapide": false,
-      "graph:Ouvrir la vue graphique": false,
-      "canvas:Créer une nouvelle toile": false,
-      "daily-notes:Ouvrir la note quotidienne": false,
-      "templates:Insérer le modèle": false,
-      "command-palette:Ouvrir la palette de commandes": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
       "obsidian-git:Open Git source control": false,
       "markwhen:Create new Markwhen file": false,
@@ -272,54 +285,54 @@
       "obsidian-day-planner:Open Multi-Day View": false
     }
   },
-  "active": "bf8724134b6a99fa",
+  "active": "a97ef5a0a886d786",
   "lastOpenFiles": [
-    "INFO-H410/Synthese reinforcement learning.md",
-    "INFO-H410/syntheses neural networks.md",
-    "INFO-H410/Synthese data mining.md",
-    "INFO-H410/Synthese chap text mining.md",
-    "INFO-H410/Synthese Biological algo.md",
-    "INFO-H410/INFO-H410 Synthese cours 1-5.md",
-    "ELEC-H473/synthese/Chapter 11 security side channels.md",
+    "MA2",
+    "Excalidraw/Drawing 2025-05-03 09.41.36.excalidraw.md",
+    "MA1",
+    "MA1/INFO-H410/Synthese Biological algo.md",
+    "Untitled.md",
+    "MA1/INFO-H410/Synthese reinforcement learning.md",
+    "MA1/INFO-H410/syntheses neural networks.md",
+    "MA1/INFO-H410/Synthese data mining.md",
+    "MA1/INFO-H410/Synthese chap text mining.md",
+    "MA1/INFO-H410/INFO-H410 Synthese cours 1-5.md",
+    "MA1/ELEC-H473/synthese/Chapter 11 security side channels.md",
     "vv.md",
-    "ELEC-H473/synthese/Chapter 10 security.md",
-    "ELEC-H473/synthese/synthese chapter 3-4-5-6-8-9.md",
-    "ELEC-H473/synthese/Chapter 7 programming in SIMD.md",
-    "ELEC-H473/Exams questions/Chapter 7 Programming in SIMD.md",
-    "ELEC-H473/Exams questions/Chapter 2 C and assembly code.md",
-    "ELEC-H473/Exams questions/Chapter 1  Logic Circuits.md",
-    "INFO-F422/exam/exam classification.md",
-    "INFO-F422/exam",
-    "INFO-H422/Cerf/Synthese chap 4, Channel capacity.md",
-    "INFO-F422/synthèse/Synthese classification.md",
-    "INFO-H422/Cerf",
-    "INFO-H422",
-    "INFO-F422/synthèse/Synthèse non-linear algorithms.md",
-    "INFO-F422/synthèse/synthese non-parametric estimation.md",
-    "INFO-F422/synthèse/synthèse parametric esimation.md",
-    "INFO-F422/synthèse/Synthese linear regression.md",
-    "INFO-F422/synthèse/Synthese foundation of probability.md",
-    "INFO-F422/synthèse/Synthèse feature selection.md",
-    "INFO-H413/TP5 heuristic.md",
-    "INFO-H413/Synthèse Multi-objective optimization.md",
-    "INFO-F422/Projet/V1 projet.md",
-    "INFO-F422/synthèse",
-    "INFO-F422/Projet",
-    "INFO-F424",
-    "INFO-H410",
-    "Images/Pasted image 20250127143731.png",
-    "Images/Pasted image 20250127131300.png",
-    "Images/Pasted image 20250127111155.png",
-    "Images/Pasted image 20250127111335.png",
+    "MA1/ELEC-H473/synthese/Chapter 10 security.md",
+    "MA1/ELEC-H473/synthese/synthese chapter 3-4-5-6-8-9.md",
+    "MA1/ELEC-H473/synthese/Chapter 7 programming in SIMD.md",
+    "MA1/ELEC-H473/Exams questions/Chapter 7 Programming in SIMD.md",
+    "MA1/ELEC-H473/Exams questions/Chapter 2 C and assembly code.md",
+    "MA1/ELEC-H473/Exams questions/Chapter 1  Logic Circuits.md",
+    "MA1/INFO-F422/exam/exam classification.md",
+    "MA1/INFO-F422/exam",
+    "MA1/INFO-H422/Cerf/Synthese chap 4, Channel capacity.md",
+    "MA1/INFO-F422/synthèse/Synthese classification.md",
+    "MA1/INFO-H422/Cerf",
+    "MA1/INFO-H422",
+    "MA1/INFO-F422/synthèse/Synthèse non-linear algorithms.md",
+    "MA1/INFO-F422/synthèse/synthese non-parametric estimation.md",
+    "MA1/INFO-F422/synthèse/synthèse parametric esimation.md",
+    "MA1/INFO-F422/synthèse/Synthese linear regression.md",
+    "MA1/INFO-F422/synthèse/Synthese foundation of probability.md",
+    "MA1/INFO-F422/synthèse/Synthèse feature selection.md",
+    "MA1/INFO-F422/synthèse",
+    "MA1/INFO-F422/Projet",
+    "MA1/INFO-F424",
+    "MA1/INFO-H410",
+    "MA1/Images/Pasted image 20250127143731.png",
+    "MA1/Images/Pasted image 20250127131300.png",
+    "MA1/Images/Pasted image 20250127111155.png",
+    "MA1/Images/Pasted image 20250127111335.png",
     "Sans titre.canvas",
     "Excalidraw",
-    "ELEC-H473/synthese",
-    "ELEC-H473/Exams questions",
-    "Images/Pasted image 20250127165824.png",
-    "Images/Pasted image 20250127163816.png",
-    "Images/Pasted image 20250127162428.png",
-    "Images/Pasted image 20250127145811.png",
-    "Images/Pasted image 20250127145756.png",
-    "Images/Pasted image 20250127145425.png"
+    "MA1/ELEC-H473/synthese",
+    "MA1/Images/Pasted image 20250127165824.png",
+    "MA1/Images/Pasted image 20250127163816.png",
+    "MA1/Images/Pasted image 20250127162428.png",
+    "MA1/Images/Pasted image 20250127145811.png",
+    "MA1/Images/Pasted image 20250127145756.png",
+    "MA1/Images/Pasted image 20250127145425.png"
   ]
 }
