@@ -331,14 +331,14 @@ Starting with item 'I₃':
 
 ### Apriori vs FP-Growth
 
-|Aspect|Apriori|FP-Growth|
-|---|---|---|
-|**Database scans**|Multiple (k+1 scans for k-itemsets)|Two (once to build tree, once implicitly)|
-|**Candidate generation**|Yes, can be huge (O(|U|
-|**Memory usage**|Stores candidates|Stores compressed tree|
-|**Search strategy**|Breadth-first|Depth-first|
-|**Traversal**|General-to-specific|Suffix-based pattern growth|
-|**When better**|Sparse datasets, low support thresholds|Dense datasets, many frequent patterns|
+| Aspect                   | Apriori                                 | FP-Growth                                 |
+| ------------------------ | --------------------------------------- | ----------------------------------------- |
+| **Database scans**       | Multiple (k+1 scans for k-itemsets)     | Two (once to build tree, once implicitly) |
+| **Candidate generation** | Yes, can be huge (O(                    | U                                         |
+| **Memory usage**         | Stores candidates                       | Stores compressed tree                    |
+| **Search strategy**      | Breadth-first                           | Depth-first                               |
+| **Traversal**            | General-to-specific                     | Suffix-based pattern growth               |
+| **When better**          | Sparse datasets, low support thresholds | Dense datasets, many frequent patterns    |
 
 ### Why FP-Growth Outperforms Apriori
 
