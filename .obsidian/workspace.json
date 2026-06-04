@@ -4,24 +4,275 @@
     "type": "split",
     "children": [
       {
-        "id": "c161d801e839efff",
+        "id": "67ea2e463bf43de0",
         "type": "tabs",
         "children": [
           {
-            "id": "340ddccdc7887bf1",
+            "id": "9485593a0412c453",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MA2/INFO-H420/Fairness in AI-ML Systems - Complete Study Guide.md",
+                "file": "MA2/INFO-H423/6) Outlier mining and classification.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fairness in AI-ML Systems - Complete Study Guide"
+              "title": "6) Outlier mining and classification"
+            }
+          },
+          {
+            "id": "c1bd5e5af4737d95",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/20-02-2026.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "20-02-2026"
+            }
+          },
+          {
+            "id": "118d66ad43be7bec",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.7"
+            }
+          },
+          {
+            "id": "2475857fb505f3f9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/27-02-2026.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "27-02-2026"
+            }
+          },
+          {
+            "id": "f38baddc3f23046e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/06-03-2026.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "06-03-2026"
+            }
+          },
+          {
+            "id": "fdbe8d97ae3134b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/27-02-2026.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "27-02-2026"
+            }
+          },
+          {
+            "id": "f45c77e17913f333",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Recherche Taff/Smals/Préparation UML.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Préparation UML"
+            }
+          },
+          {
+            "id": "1b2b93e2d4e48b50",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/Master Thesis/Claude Report/comparative_analysis.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "comparative_analysis"
+            }
+          },
+          {
+            "id": "4ec71a77cc450028",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "questions réu memoire.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "questions réu memoire"
+            }
+          },
+          {
+            "id": "c28df63c8aeb8b67",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/15-05-2026.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "15-05-2026"
+            }
+          },
+          {
+            "id": "f9c94efc1cbddca7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/22-05-2026.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "22-05-2026"
+            }
+          },
+          {
+            "id": "ccabbf9b5d62e372",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/ENVI-F405/1. Réchauffement global, événements climatiques extrêmes , Gouvernance climatique mondiale.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1. Réchauffement global, événements climatiques extrêmes , Gouvernance climatique mondiale"
+            }
+          },
+          {
+            "id": "383d3830d064b781",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/ENVI-F405/2. L’origine économique et politique des émissions de gaz à effet de serre.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2. L’origine économique et politique des émissions de gaz à effet de serre"
+            }
+          },
+          {
+            "id": "bddbfcf4f9c01179",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/ENVI-F405/3. Modélisation des émissions et mesures d’atténuation.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3. Modélisation des émissions et mesures d’atténuation"
+            }
+          },
+          {
+            "id": "15f68fb2b7ab9de2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/ENVI-F405/3.  Conférence Fluxys.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3.  Conférence Fluxys"
+            }
+          },
+          {
+            "id": "13ffc8064a222652",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/ENVI-F405/4. Analyse critique des politiques publiques ‘climatiques’.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "4. Analyse critique des politiques publiques ‘climatiques’"
+            }
+          },
+          {
+            "id": "0c8aabcfcbd9df10",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/ENVI-F405/5. Analyse des gagnants et perdants des politiques climatiques.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5. Analyse des gagnants et perdants des politiques climatiques"
+            }
+          },
+          {
+            "id": "d7d0fe54fa3d01ec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/ENVI-F405/4. Analyse critique des politiques publiques ‘climatiques’.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "4. Analyse critique des politiques publiques ‘climatiques’"
+            }
+          },
+          {
+            "id": "3f0a619bdc41b9e7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H505/INFO-H505 Cloud Computing — Exam Recap course.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "INFO-H505 Cloud Computing — Exam Recap course"
             }
           }
-        ]
+        ],
+        "currentTab": 18
       }
     ],
     "direction": "vertical"
@@ -78,7 +329,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 219.5
   },
   "right": {
     "id": "15caee76fb3f38aa",
@@ -189,13 +440,13 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Créer une nouvelle base": false,
       "switcher:Ouvrir le sélecteur rapide": false,
       "graph:Ouvrir la vue graphique": false,
       "canvas:Créer une nouvelle toile": false,
       "daily-notes:Ouvrir la note quotidienne": false,
       "templates:Insérer le modèle": false,
       "command-palette:Ouvrir la palette de commandes": false,
-      "bases:Create new base": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
       "obsidian-git:Open Git source control": false,
       "markwhen:Create new Markwhen file": false,
@@ -203,55 +454,56 @@
       "obsidian-day-planner:Open Multi-Day View": false
     }
   },
-  "active": "340ddccdc7887bf1",
+  "active": "a97ef5a0a886d786",
   "lastOpenFiles": [
-    "Markwhen/Markwhen 1-13-2026 10.32.03.mw",
-    "MA2/INFO-H420/Fairness in AI-ML Systems - Complete Study Guide.md",
-    "Markwhen",
-    "MA2/INFO-H423/8) Stream data mining.md",
-    "MA2/INFO-H423/7) Text mining.md",
+    "MA2/ENVI-F405/4. Analyse critique des politiques publiques ‘climatiques’.md",
+    "MA2/INFO-H505/INFO-H505 Cloud Computing — Exam Recap course.md",
+    "MA2/INFO-H505",
+    "MA2/ENVI-F405/6. Perception publique de l’enjeu climatique et analyse des discours.md",
+    "MA2/ENVI-F405/5. Analyse des gagnants et perdants des politiques climatiques.md",
+    "MA2/ENVI-F405/3.  Conférence Fluxys.md",
+    "MA2/ENVI-F405/3. Modélisation des émissions et mesures d’atténuation.md",
+    "MA2/ENVI-F405/2. L’origine économique et politique des émissions de gaz à effet de serre.md",
+    "MA2/ENVI-F405/1. Réchauffement global, événements climatiques extrêmes , Gouvernance climatique mondiale.md",
+    "MA2/INFO-H512/22-05-2026.md",
+    "MA2/ENVI-F405",
+    "MA2/INFO-H512/15-05-2026.md",
+    "questions réu memoire.md",
+    "Recherche Taff/Smals/Préparation UML.md",
+    "MA2/Master Thesis/Claude Report/labelstudio_association_diagnostic.json",
+    "MA2/Master Thesis/Claude Report/labelstudio_association_bootstrap.json",
+    "MA2/Master Thesis/Claude Report/text_symbol_associations.json",
+    "MA2/Master Thesis/Claude Report/comparative_analysis.md",
+    "MA2/Master Thesis/Claude Report/evaluation_report YOLO+paddleOCR.md",
+    "MA2/Master Thesis/Claude Report/ocr_evaluation_report.md",
+    "Propostiotion contrat.md",
+    "MA2/INFO-H512/03-04-2026.md",
+    "MA2/INFO-H512/06-03-2026.md",
+    "MA2/INFO-H512/27-02-2026.md",
+    "document.md",
+    "PlanningVoyageColombieBolivie2026.md",
+    "MA2/Master Thesis/Claude Report/ocr_paddleocr_report.md",
+    "Recherche Taff/Smals",
+    "Recherche Taff",
+    "Images/Image 2.jpeg",
+    "Images/Image.jpeg",
+    "Images/Pasted image 20260227132031.png",
+    "repeat shot of vaccine (5pm).md",
     "MA2/INFO-H423/6) Outlier mining and classification.md",
+    "MA2/INFO-H512/20-02-2026.md",
+    "MA2/INFO-H512",
     "MA2/INFO-H423/5) Association pattern mining.md",
-    "MA2/INFO-H423/4) Time series forecasting.md",
-    "MA2/INFO-H423/2) Data preparation and distance measures.md",
-    "MA2/INFO-H423/3) Clustering.md",
-    "MA2/INFO-H423/1) Introduction.md",
-    "MA2/INFO-H420/Fairness.md",
-    "MA2/INFO-H420/LLM.md",
-    "MA2/INFO-H420",
-    "Untitled.base",
-    "Markwhen/Markwhen 12-21-2025 16.02.20.mw",
-    "5) Association pattern mining.md",
-    "MA1/ELEC-H473/synthese/Chapter 5 syntheses memory subsystem.md",
-    "MA1/ELEC-H473/synthese/Chap 3 syntheses Basic processor architecture and the execution mode.md",
+    "Images/Capture d’écran 2026-01-15 à 17.44.22.png",
+    "Markwhen/Markwhen 1-13-2026 10.32.03.mw",
+    "Markwhen",
     "Images/Capture d’écran 2025-12-21 à 10.10.12.png",
-    "MA1/INFO-F422/exam/exam classification.md",
-    "MA1/INFO-F422/Projet/V2 projet.md",
-    "MA1/INFO-F422/Projet/V1 projet.md",
-    "MA1/INFO-F422/synthèse/Synthèse feature selection.md",
-    "MA1/INFO-F422/synthèse/Synthese classification.md",
-    "MA1/INFO-F422/synthèse/synthèse parametric esimation.md",
-    "MA1/INFO-F422/synthèse/synthese non-parametric estimation.md",
-    "MA1/INFO-F422/synthèse/Synthèse non-linear algorithms.md",
-    "MA1/INFO-F422/synthèse/Synthese linear regression.md",
-    "MA1/INFO-F422/synthèse/Synthese foundation of probability.md",
-    "MA1/INFO-H500/Question INFO-H500.md",
     "Images/Pasted image 20251221100504.png",
     "Images/Capture d’écran 2025-12-20 à 14.43.14.png",
     "Images/Capture d’écran 2025-12-19 à 11.32.34.png",
     "Images/Capture d’écran 2025-12-19 à 11.32.19.png",
     "Images/Capture d’écran 2025-12-19 à 11.15.52.png",
-    "Images",
-    "MA2/INFO-H423",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "MA2",
-    "MA1",
-    "MA1/INFO-F422/exam",
-    "MA1/Images/Pasted image 20250127143731.png",
-    "MA1/Images/Pasted image 20250127131300.png",
-    "MA1/Images/Pasted image 20250127111155.png",
-    "MA1/Images/Pasted image 20250127111335.png",
     "Sans titre.canvas"
   ]
 }

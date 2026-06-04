@@ -1,3 +1,4 @@
+![[Capture d’écran 2026-01-15 à 17.44.22.png]]
 ## 1. Introduction & Problem Definition
 
 ### Core Problem
