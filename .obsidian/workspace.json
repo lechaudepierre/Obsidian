@@ -409,7 +409,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 385.5
+    "width": 385.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -427,13 +428,20 @@
       "obsidian-day-planner:Open Multi-Day View": false
     }
   },
-  "active": "2004a8c5bf1679dc",
+  "active": "a97ef5a0a886d786",
   "lastOpenFiles": [
+    "Recherche_Taff/Smals/Préparation UML.md",
+    "Recherche_Taff/Smals/Propostiotion contrat.md",
+    "Recherche_Taff/Smals",
+    "Recherche_Taff",
+    "Recherche Taff/Smals/Propostiotion contrat.md",
+    "Recherche Taff/Propostiotion contrat.md",
+    "gitignore",
+    "MA2/INFO-H512/resume/9. A Hands-on Introduction to Hierarchical Pattern-BasedSequence Learning.md",
     "MA2/Master Thesis/Claude Report/ocr_paddleocr_report.md",
     "MA2/Master Thesis/Claude Report/ocr_evaluation_report.md",
     "MA2/Master Thesis/Claude Report/evaluation_report YOLO+paddleOCR.md",
     "MA2/Master Thesis/Claude Report/comparative_analysis.md",
-    "MA2/INFO-H512/resume/9. A Hands-on Introduction to Hierarchical Pattern-BasedSequence Learning.md",
     "MA2/INFO-H512/notes seminaires/15-05-2026.md",
     "MA2/INFO-H512/notes seminaires/20-02-2026.md",
     "MA2/INFO-H512/notes seminaires/22-05-2026.md",
@@ -454,17 +462,10 @@
     "Images/Current_trends_2026_arnau-1 (1).pdf",
     "MA2/INFO-H512/resume/2. GenAI.md",
     "Images/Syrtis-_-VUB-20_02.pdf",
-    "Images/Syrtis-_-VUB-20_02 1.pdf",
-    "Images/Syrtis-_-VUB-20_02 2.pdf",
     "MA2/INFO-H512/resume/1. Causal Federated Learning For Neuroimaging.md",
-    "Images/2025_02_13-Current_Trends_FL_Causal_Neuro (2).pdf",
     "MA2/ENVI-F405/8. Bouleversements climatiques et bouleversements politiques. Conclusion.md",
     "MA2/ENVI-F405/7. Adaptation & Résilience.md",
     "MA2/ENVI-F405/7. Conference BCRA (CERAC).md",
-    "MA2/INFO-H505/Synthèse.md",
-    "MA2/INFO-H505/INFO-H505 Cloud Computing — Exam Recap course.md",
-    "Sans titre.md",
-    "MA1/ELEC-H473/synthese/Chapter 11 security side channels.md",
     "Images/Image 2.jpeg",
     "Images/Image.jpeg",
     "Images/Pasted image 20260227132031.png",
