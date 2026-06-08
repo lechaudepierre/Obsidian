@@ -167,16 +167,86 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MA2/INFO-H512/resume/4. counterfactuals and fair AI.md",
+                "file": "MA2/INFO-H512/notes seminaires/27-02-2026.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4. counterfactuals and fair AI"
+              "title": "27-02-2026"
+            }
+          },
+          {
+            "id": "90a117199691cb9e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/resume/5. Attribution for Explainability ofBlack-Box ML Models.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5. Attribution for Explainability ofBlack-Box ML Models"
+            }
+          },
+          {
+            "id": "3af495c2c877d095",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/resume/6. Beyond the algorithm, realizing real value from AI..md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6. Beyond the algorithm, realizing real value from AI."
+            }
+          },
+          {
+            "id": "d914c26f199f802c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/resume/7. Algocracy, FARI and Smart Cities.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7. Algocracy, FARI and Smart Cities"
+            }
+          },
+          {
+            "id": "6810a9f56f93c1bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/resume/8. Morphogenetic architecture.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8. Morphogenetic architecture"
+            }
+          },
+          {
+            "id": "934714011cfa94f0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MA2/INFO-H512/resume/9. A Hands-on Introduction to Hierarchical Pattern-BasedSequence Learning.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9. A Hands-on Introduction to Hierarchical Pattern-BasedSequence Learning"
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 16
       }
     ],
     "direction": "vertical"
@@ -335,12 +405,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 385.5,
-    "collapsed": true
+    "width": 385.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -358,27 +427,37 @@
       "obsidian-day-planner:Open Multi-Day View": false
     }
   },
-  "active": "649cc83cdcb45c6f",
+  "active": "2004a8c5bf1679dc",
   "lastOpenFiles": [
+    "MA2/Master Thesis/Claude Report/ocr_paddleocr_report.md",
+    "MA2/Master Thesis/Claude Report/ocr_evaluation_report.md",
+    "MA2/Master Thesis/Claude Report/evaluation_report YOLO+paddleOCR.md",
+    "MA2/Master Thesis/Claude Report/comparative_analysis.md",
+    "MA2/INFO-H512/resume/9. A Hands-on Introduction to Hierarchical Pattern-BasedSequence Learning.md",
+    "MA2/INFO-H512/notes seminaires/15-05-2026.md",
+    "MA2/INFO-H512/notes seminaires/20-02-2026.md",
+    "MA2/INFO-H512/notes seminaires/22-05-2026.md",
+    "Images/slides.pdf",
+    "MA2/INFO-H512/resume/8. Morphogenetic architecture.md",
+    "MA2/INFO-H512/resume/7. Algocracy, FARI and Smart Cities.md",
+    "Images/CTAI.pdf",
+    "MA2/INFO-H512/resume/6. Beyond the algorithm, realizing real value from AI..md",
+    "Images/Datashift_Lecture-VUB_Current-Trends-in-AI_Responsible-AI.pdf",
+    "MA2/INFO-H512/resume/5. Attribution for Explainability ofBlack-Box ML Models.md",
+    "Images/Attribution for Black-Box Explainability.pdf",
+    "MA2/INFO-H512/notes seminaires/27-02-2026.md",
+    "MA2/INFO-H512/notes seminaires/06-03-2026.md",
+    "MA2/INFO-H512/notes seminaires/03-04-2026.md",
+    "MA2/INFO-H512/resume/4. counterfactuals and fair AI.md",
     "Images/Current_Trends_in_AI_Counterfactuals.pdf",
     "MA2/INFO-H512/resume/3. Brain-computer interfaces ; methods and applications.md",
-    "MA2/INFO-H512/resume/4. counterfactuals and fair AI.md",
     "Images/Current_trends_2026_arnau-1 (1).pdf",
     "MA2/INFO-H512/resume/2. GenAI.md",
-    "MA2/INFO-H512/notes seminaires/27-02-2026.md",
     "Images/Syrtis-_-VUB-20_02.pdf",
     "Images/Syrtis-_-VUB-20_02 1.pdf",
     "Images/Syrtis-_-VUB-20_02 2.pdf",
     "MA2/INFO-H512/resume/1. Causal Federated Learning For Neuroimaging.md",
-    "MA2/INFO-H512/notes seminaires/20-02-2026.md",
     "Images/2025_02_13-Current_Trends_FL_Causal_Neuro (2).pdf",
-    "Images/2025_02_13-Current_Trends_FL_Causal_Neuro (2) 1.pdf",
-    "MA2/INFO-H512/notes seminaires/03-04-2026.md",
-    "MA2/INFO-H512/resume",
-    "MA2/INFO-H512/notes seminaires/15-05-2026.md",
-    "MA2/INFO-H512/notes seminaires/06-03-2026.md",
-    "MA2/INFO-H512/notes seminaires",
-    "MA2/INFO-H512/notes seminaires/22-05-2026.md",
     "MA2/ENVI-F405/8. Bouleversements climatiques et bouleversements politiques. Conclusion.md",
     "MA2/ENVI-F405/7. Adaptation & Résilience.md",
     "MA2/ENVI-F405/7. Conference BCRA (CERAC).md",
@@ -386,16 +465,6 @@
     "MA2/INFO-H505/INFO-H505 Cloud Computing — Exam Recap course.md",
     "Sans titre.md",
     "MA1/ELEC-H473/synthese/Chapter 11 security side channels.md",
-    "MA1/ELEC-H473/synthese/Chap 3 syntheses Basic processor architecture and the execution mode.md",
-    "MA1/ELEC-H473/synthese/Chapter 5 syntheses memory subsystem.md",
-    "MA1/ELEC-H473/synthese/Chapter 6 Data parallelism SIMD.md",
-    "MA1/ELEC-H473/synthese/Chapter 7 programming in SIMD.md",
-    "MA1/ELEC-H473/synthese/Chapter 10 security.md",
-    "MA2/ENVI-F405/4. Analyse critique des politiques publiques ‘climatiques’.md",
-    "MA2/INFO-H505",
-    "MA2/ENVI-F405/6. Perception publique de l’enjeu climatique et analyse des discours.md",
-    "MA2/ENVI-F405/5. Analyse des gagnants et perdants des politiques climatiques.md",
-    "MA2/ENVI-F405",
     "Images/Image 2.jpeg",
     "Images/Image.jpeg",
     "Images/Pasted image 20260227132031.png",
