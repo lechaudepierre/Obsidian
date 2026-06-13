@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENVI-F405 — Le cours raconté</title>
+<style>
+  :root{
+    --paper:#faf7f2; --ink:#1d2229; --ink2:#4a5360; --line:#e2dcd2;
+    --c1:#0e7490; --c2:#b45309; --c3:#15803d; --c4:#7c3aed; --c5:#be185d;
+    --c6:#a16207; --c7:#0f766e; --c8:#b91c1c;
+    --int:#0e7490; --ue:#7c3aed; --be:#b45309; --soc:#15803d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65;}
+  ::selection{background:#fde68a;}
+
+  /* ---------- progress + nav ---------- */
+  #progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--c1),var(--c8));width:0;z-index:100;transition:width .1s;}
+  #chapnav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:10px;}
+  #chapnav a{width:10px;height:10px;border-radius:50%;background:#cfc8bb;display:block;position:relative;transition:all .2s;}
+  #chapnav a.active{background:var(--ink);transform:scale(1.4);}
+  #chapnav a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-family:system-ui,sans-serif;font-size:.72rem;background:var(--ink);color:#fff;padding:3px 9px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s;}
+  #chapnav a:hover span{opacity:1;}
+  @media(max-width:900px){#chapnav{display:none;}}
+
+  /* ---------- hero ---------- */
+  .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 24px;position:relative;}
+  .hero .kicker{font-family:system-ui,sans-serif;letter-spacing:.25em;text-transform:uppercase;font-size:.75rem;color:var(--ink2);margin-bottom:18px;}
+  .hero h1{font-size:clamp(2rem,5.5vw,3.6rem);line-height:1.15;max-width:820px;font-weight:700;}
+  .hero h1 em{font-style:italic;color:var(--c8);}
+  .hero p.lead{max-width:620px;margin-top:22px;font-size:1.1rem;color:var(--ink2);}
+  .hero .scroll-cue{position:absolute;bottom:30px;font-family:system-ui,sans-serif;font-size:.8rem;color:var(--ink2);animation:bob 2s infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+  /* ---------- chapters ---------- */
+  .chapter{max-width:740px;margin:0 auto;padding:90px 24px 30px;}
+  .chap-head{display:flex;align-items:baseline;gap:14px;border-bottom:3px solid var(--accent);padding-bottom:10px;margin-bottom:26px;}
+  .chap-num{font-family:system-ui,sans-serif;font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1;}
+  .chap-meta{font-family:system-ui,sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);}
+  .chapter h2{font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;margin-top:2px;}
+  .chapter p{margin:0 0 18px;font-size:1.05rem;}
+  .chapter p.big{font-size:1.2rem;line-height:1.6;}
+  .chapter b{color:var(--ink);}
+  .keyterm{border-bottom:2px solid var(--accent);font-weight:700;}
+  .transition-line{max-width:740px;margin:34px auto 0;padding:0 24px;font-style:italic;color:var(--ink2);font-size:1.05rem;display:flex;align-items:center;gap:12px;}
+  .transition-line::after{content:"";flex:1;height:1px;background:var(--line);}
+  .transition-line .arrow{color:var(--accent,var(--ink));font-style:normal;font-weight:700;}
+
+  /* ---------- viz blocks ---------- */
+  .viz{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;margin:30px 0;font-family:system-ui,sans-serif;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .viz h4{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink2);margin-bottom:18px;}
+  .viz .src{font-size:.72rem;color:#9aa3ad;margin-top:14px;}
+
+  .stat-row{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;text-align:center;}
+  .stat{flex:1;min-width:140px;}
+  .stat .n{font-size:2.4rem;font-weight:800;color:var(--accent);line-height:1.1;}
+  .stat .l{font-size:.82rem;color:var(--ink2);margin-top:6px;}
+
+  /* kaya */
+  .kaya{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;font-size:1.25rem;font-weight:700;}
+  .kterm{padding:8px 13px;border-radius:10px;cursor:pointer;border:2px solid transparent;transition:all .15s;background:#f3efe7;}
+  .kterm:hover,.kterm.on{border-color:var(--c2);background:#fff7ed;}
+  .kaya .op{color:var(--ink2);}
+  #kaya-info{margin-top:16px;padding:13px 16px;background:#fff7ed;border-left:4px solid var(--c2);border-radius:8px;font-size:.92rem;min-height:52px;}
+
+  /* bars generic */
+  .bars{display:flex;flex-direction:column;gap:9px;}
+  .bar-row{display:grid;grid-template-columns:130px 1fr 56px;align-items:center;gap:10px;font-size:.85rem;}
+  .bar-track{background:#f1ede5;border-radius:6px;height:20px;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:6px;width:0;transition:width 1s cubic-bezier(.2,.7,.3,1);}
+  .bar-val{font-weight:700;text-align:right;font-variant-numeric:tabular-nums;}
+
+  /* scenario picker */
+  .seg{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
+  .seg button{font-family:inherit;border:1.5px solid var(--line);background:#fff;border-radius:20px;padding:7px 15px;cursor:pointer;font-size:.85rem;transition:all .15s;}
+  .seg button.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+  #scen-note{margin-top:14px;font-size:.9rem;color:var(--ink2);font-style:italic;}
+
+  /* steps (CV crisis) */
+  .steps{counter-reset:s;display:flex;flex-direction:column;gap:0;}
+  .step{display:flex;gap:14px;cursor:pointer;padding:11px 10px;border-radius:10px;transition:background .15s;}
+  .step:hover{background:#faf6ee;}
+  .step .dot{counter-increment:s;flex:none;width:30px;height:30px;border-radius:50%;background:var(--c5);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
+  .step .dot::before{content:counter(s);}
+  .step .tt{font-weight:700;font-size:.92rem;}
+  .step .dd{font-size:.85rem;color:var(--ink2);max-height:0;overflow:hidden;transition:max-height .3s;}
+  .step.open .dd{max-height:140px;margin-top:4px;}
+
+  /* lamb grid */
+  .lamb{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:560px){.lamb{grid-template-columns:1fr;}}
+  .lamb-cell{border:1.5px solid var(--line);border-radius:12px;padding:15px;cursor:pointer;transition:all .15s;background:#fff;}
+  .lamb-cell:hover{border-color:var(--c6);}
+  .lamb-cell.open{background:#fefce8;border-color:var(--c6);}
+  .lamb-cell .tt{font-weight:800;font-size:.92rem;}
+  .lamb-cell .sub{font-size:.78rem;color:var(--ink2);}
+  .lamb-cell ul{list-style:none;max-height:0;overflow:hidden;transition:max-height .3s;font-size:.83rem;margin-top:0;}
+  .lamb-cell.open ul{max-height:220px;margin-top:9px;}
+  .lamb-cell li{padding:3px 0 3px 16px;position:relative;}
+  .lamb-cell li::before{content:"→";position:absolute;left:0;color:var(--c6);}
+
+  /* risk formula */
+  .riskf{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;font-weight:800;font-size:1.15rem;}
+  .rterm{padding:10px 16px;border-radius:12px;cursor:pointer;border:2px solid transparent;transition:all .15s;}
+  .rterm.a{background:#fee2e2;} .rterm.v{background:#fef3c7;} .rterm.e{background:#dbeafe;}
+  .rterm:hover,.rterm.on{border-color:var(--ink);}
+  #risk-info{margin-top:15px;padding:13px 16px;background:#f8fafc;border-left:4px solid var(--c7);border-radius:8px;font-size:.92rem;min-height:52px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .chip{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;border-radius:18px;padding:5px 12px;font-size:.8rem;font-weight:600;}
+
+  blockquote{border-left:4px solid var(--accent,var(--ink));padding:6px 0 6px 20px;margin:26px 0;font-style:italic;font-size:1.15rem;color:var(--ink2);}
+  blockquote .who{display:block;font-style:normal;font-family:system-ui,sans-serif;font-size:.78rem;margin-top:8px;color:#9aa3ad;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s;}
+  .reveal.vis{opacity:1;transform:none;}
+
+  /* ---------- timeline ---------- */
+  .tl-section{background:var(--ink);color:#e8e4dc;margin-top:90px;padding:80px 0 100px;}
+  .tl-head{max-width:740px;margin:0 auto 14px;padding:0 24px;text-align:center;}
+  .tl-head .kicker{font-family:system-ui,sans-serif;letter-spacing:.25em;text-transform:uppercase;font-size:.72rem;color:#9aa3ad;}
+  .tl-head h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:10px 0 14px;color:#fff;}
+  .tl-head p{color:#b7bfc8;font-size:1rem;}
+  .tl-filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:26px auto 8px;padding:0 24px;font-family:system-ui,sans-serif;}
+  .tl-filters button{border:1.5px solid #3b434e;background:transparent;color:#cfd6dd;border-radius:20px;padding:7px 14px;cursor:pointer;font-size:.82rem;display:flex;align-items:center;gap:7px;transition:all .15s;}
+  .tl-filters button .sw{width:10px;height:10px;border-radius:50%;}
+  .tl-filters button.off{opacity:.35;}
+  .tl-hint{text-align:center;font-family:system-ui,sans-serif;font-size:.78rem;color:#8a93a0;margin-bottom:34px;}
+
+  .tl-wrap{max-width:860px;margin:0 auto;padding:0 24px;position:relative;}
+  .tl-wrap::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:#39414d;transform:translateX(-50%);}
+  .ev{position:relative;width:calc(50% - 34px);margin-bottom:18px;font-family:system-ui,sans-serif;cursor:pointer;transition:opacity .25s;}
+  .ev.left{margin-right:auto;text-align:right;}
+  .ev.right{margin-left:auto;}
+  .ev .node{position:absolute;top:14px;width:14px;height:14px;border-radius:50%;background:var(--ec);border:3px solid var(--ink);box-shadow:0 0 0 2px var(--ec);}
+  .ev.left .node{right:-42px;}
+  .ev.right .node{left:-42px;}
+  .ev .card{background:#262e38;border:1px solid #39414d;border-radius:12px;padding:12px 15px;display:inline-block;text-align:left;max-width:100%;transition:all .2s;border-left:4px solid var(--ec);}
+  .ev:hover .card{background:#2c3540;transform:translateY(-2px);}
+  .ev .yr{font-size:.72rem;font-weight:800;color:var(--ec);letter-spacing:.08em;}
+  .ev .tt{font-weight:700;font-size:.92rem;color:#fff;margin:2px 0;}
+  .ev .lane-tag{font-size:.68rem;color:#8a93a0;text-transform:uppercase;letter-spacing:.1em;}
+  .ev .dd{font-size:.83rem;color:#b7bfc8;max-height:0;overflow:hidden;transition:max-height .35s;}
+  .ev.open .dd{max-height:300px;margin-top:8px;}
+  .ev .links{display:none;flex-wrap:wrap;gap:6px;margin-top:10px;}
+  .ev.open .links{display:flex;}
+  .ev .lk{font-size:.72rem;background:#1a212a;border:1px solid #4a5360;color:#d6dde4;border-radius:14px;padding:3px 10px;cursor:pointer;transition:all .15s;}
+  .ev .lk:hover{border-color:#fff;color:#fff;}
+  .ev.dim{opacity:.18;pointer-events:none;}
+  .ev.flash .card{box-shadow:0 0 0 3px var(--ec);background:#323d4a;}
+  .ev.future .card{border-style:dashed;border-left-style:solid;opacity:.92;}
+  .yr-marker{position:relative;text-align:center;margin:30px 0 24px;font-family:system-ui,sans-serif;}
+  .yr-marker span{background:var(--ink);border:1.5px solid #4a5360;color:#9aa3ad;font-weight:800;font-size:.8rem;letter-spacing:.15em;padding:5px 16px;border-radius:18px;position:relative;z-index:2;}
+  @media(max-width:680px){
+    .tl-wrap::before{left:14px;}
+    .ev{width:calc(100% - 44px);margin-left:44px !important;text-align:left !important;}
+    .ev .node{left:-37px !important;right:auto !important;}
+    .yr-marker{text-align:left;padding-left:0px;}
+  }
+
+  /* epilogue */
+  .epilogue{max-width:740px;margin:0 auto;padding:90px 24px 120px;text-align:center;}
+  .epilogue h2{font-size:1.8rem;margin-bottom:20px;}
+  .epilogue p{font-size:1.12rem;color:var(--ink2);}
+  footer{text-align:center;font-family:system-ui,sans-serif;font-size:.78rem;color:#9aa3ad;padding-bottom:40px;}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav id="chapnav">
+  <a href="#ch1"><span>1 · Le constat</span></a>
+  <a href="#ch2"><span>2 · Le diagnostic</span></a>
+  <a href="#ch3"><span>3 · Les futurs</span></a>
+  <a href="#ch4"><span>4 · Les instruments</span></a>
+  <a href="#ch5"><span>5 · Gagnants & perdants</span></a>
+  <a href="#ch6"><span>6 · Les mots</span></a>
+  <a href="#ch7"><span>7 · S'adapter</span></a>
+  <a href="#ch8"><span>8 · La démocratie</span></a>
+  <a href="#timeline"><span>⏳ Timeline</span></a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="kicker">ENVI-F405 · Climat : Sciences &amp; Politiques · ULB</div>
+  <h1>On sait tout.<br>Alors pourquoi <em>rien ne bouge</em> ?</h1>
+  <p class="lead">La science est claire depuis 1979. Les solutions sont connues. Ce cours raconte pourquoi le climat n'est pas un problème technique, mais le problème <b>politique</b> du siècle — une histoire en huit chapitres.</p>
+  <div class="scroll-cue">▼ faire défiler</div>
+</header>
+
+<!-- ================= CH 1 ================= -->
+<section class="chapter" id="ch1" style="--accent:var(--c1)">
+  <div class="chap-head reveal"><div class="chap-num">1</div><div><div class="chap-meta">Séance 1 · Le constat</div><h2>Un problème mondial, des victimes locales</h2></div></div>
+  <p class="big reveal">Tout commence par une asymétrie. Le réchauffement est <b>global</b> — chaque tonne de CO₂ chauffe la planète entière — mais ses victimes ne le sont pas.</p>
+  <div class="viz reveal">
+    <h4>L'injustice climatique en trois chiffres</h4>
+    <div class="stat-row">
+      <div class="stat"><div class="n" data-count="95" data-suffix="%">0</div><div class="l">des décès liés aux catastrophes (1970-2008) ont eu lieu dans les pays en développement</div></div>
+      <div class="stat"><div class="n">+1,3°C</div><div class="l">réchauffement déjà atteint (2023)</div></div>
+      <div class="stat"><div class="n">+2,6°C</div><div class="l">trajectoire des politiques actuelles à 2100 — loin du 1,5°C de Paris</div></div>
+    </div>
+    <div class="src">Climate Action Tracker, nov. 2025 · GIEC WGII</div>
+  </div>
+  <p class="reveal">Les pertes <b>économiques</b> sont plus élevées au Nord (les biens y valent plus cher), mais la <b>mortalité</b> et les pertes relatives frappent le Sud. Et le Nord n'est pas immunisé : en juillet 2021, la vallée de la <span class="keyterm">Vesdre</span> bascule en une nuit — black-out provincial, ponts emportés, effets en cascade entre infrastructures.</p>
+  <p class="reveal">Face à ça, le monde a construit une gouvernance : GIEC (1988), CCNUCC (1992), puis deux philosophies successives. <b>Kyoto</b> (1997) impose des objectifs par le haut — et échoue : les USA ne ratifient jamais, le Canada claque la porte. <b>Paris</b> (2015) inverse la logique : chacun promet ce qu'il veut (NDC), tout le monde participe, personne n'est contraint. Universel, mais sans dents.</p>
+  <blockquote class="reveal">Les négociations climatiques sont en réalité des négociations de mise en place d'une nouvelle gouvernance mondiale.<span class="who">Fil conducteur de la séance 1</span></blockquote>
+</section>
+<div class="transition-line" style="--accent:var(--c2)"><span>Mais d'où viennent ces émissions, au juste — et qui en profite ?</span><span class="arrow">→</span></div>
+
+<!-- ================= CH 2 ================= -->
+<section class="chapter" id="ch2" style="--accent:var(--c2)">
+  <div class="chap-head reveal"><div class="chap-num">2</div><div><div class="chap-meta">Séance 2 · Le diagnostic</div><h2>CO₂ ~ $ ~ € : le problème, c'est l'énergie</h2></div></div>
+  <p class="big reveal">Un litre d'essence fait le travail de <b>plusieurs journées d'un travailleur humain</b>. Voilà pourquoi nos sociétés sont accrochées au fossile : dense, stockable, disponible. Émettre du carbone, c'est produire de la richesse — et inversement.</p>
+  <div class="viz reveal">
+    <h4>L'équation de Kaya — cliquez sur chaque terme</h4>
+    <div class="kaya">
+      <span class="kterm" data-k="co2">CO₂</span><span class="op">=</span>
+      <span class="kterm" data-k="pop">POP</span><span class="op">×</span>
+      <span class="kterm" data-k="rich">PIB/POP</span><span class="op">×</span>
+      <span class="kterm" data-k="eff">E/PIB</span><span class="op">×</span>
+      <span class="kterm" data-k="carb">CO₂/E</span>
+    </div>
+    <div id="kaya-info">Les émissions se décomposent en 4 facteurs — donc 4 leviers politiques. Cliquez pour les explorer.</div>
+  </div>
+  <p class="reveal">Le piège : depuis 1965, l'efficacité progresse (E/PIB et CO₂/$ en baisse de 50 %)… mais la richesse par habitant croît plus vite. <b>Les gains d'efficacité sont mangés par la croissance.</b> L'efficacité seule ne suffira jamais.</p>
+  <div class="viz reveal">
+    <h4>Qui émet ? Empreinte du top 10 % par région (t CO₂e/pers/an, 2019)</h4>
+    <div class="bars" id="class-bars">
+      <div class="bar-row"><span>Amérique du Nord</span><div class="bar-track"><div class="bar-fill" style="background:var(--c2)" data-w="100"></div></div><span class="bar-val">73,0</span></div>
+      <div class="bar-row"><span>Asie de l'Est</span><div class="bar-track"><div class="bar-fill" style="background:var(--c2)" data-w="53"></div></div><span class="bar-val">38,9</span></div>
+      <div class="bar-row"><span>Europe</span><div class="bar-track"><div class="bar-fill" style="background:var(--c2)" data-w="40"></div></div><span class="bar-val">29,2</span></div>
+      <div class="bar-row"><span>Asie du Sud/SE</span><div class="bar-track"><div class="bar-fill" style="background:var(--c2)" data-w="15"></div></div><span class="bar-val">10,6</span></div>
+      <div class="bar-row"><span style="color:var(--ink2)">— Bottom 50 % Asie du Sud</span><div class="bar-track"><div class="bar-fill" style="background:#cbd5e1" data-w="1.4"></div></div><span class="bar-val">1,0</span></div>
+    </div>
+    <div class="src">World Inequality Lab — le top 10 % nord-américain émet ~70× plus que les 50 % les plus pauvres d'Asie du Sud</div>
+  </div>
+  <p class="reveal">Trois lectures des mêmes émissions, trois conclusions politiques : <b>annuel</b> (la Chine domine), <b>cumulé depuis 1750</b> (l'Occident domine — l'argument du Sud), <b>par classe</b> (les riches dominent, partout). En Belgique, les coupables sectoriels sont clairs : <b>transport ~25 %</b>, <b>industrie ~44 %</b>.</p>
+</section>
+<div class="transition-line" style="--accent:var(--c3)"><span>Le diagnostic est posé. Peut-on encore atteindre zéro en 2050 ?</span><span class="arrow">→</span></div>
+
+<!-- ================= CH 3 ================= -->
+<section class="chapter" id="ch3" style="--accent:var(--c3)">
+  <div class="chap-head reveal"><div class="chap-num">3</div><div><div class="chap-meta">Séance 3 + conf. Fluxys · Les futurs</div><h2>2050 est possible — mais chaque futur est un pari</h2></div></div>
+  <p class="big reveal">La prospective ne prédit pas l'avenir : elle rend les paris <b>explicites et comparables</b>. Et le grand arbitrage, c'est <span class="keyterm">comportement contre technologie</span>.</p>
+  <div class="viz reveal">
+    <h4>Le transport, secteur test — choisissez un scénario 2050</h4>
+    <div class="seg" id="scen-seg">
+      <button data-s="ref" class="on">RÉFÉRENCE</button>
+      <button data-s="core">CORE-95</button>
+      <button data-s="beh">BEHAVIOUR</button>
+      <button data-s="tech">TECHNOLOGY</button>
+    </div>
+    <div class="bars">
+      <div class="bar-row"><span>🚗 Voiture</span><div class="bar-track"><div class="bar-fill" id="b-car" style="background:#94a3b8"></div></div><span class="bar-val" id="v-car"></span></div>
+      <div class="bar-row"><span>🚆 Rail</span><div class="bar-track"><div class="bar-fill" id="b-rail" style="background:var(--c3)"></div></div><span class="bar-val" id="v-rail"></span></div>
+      <div class="bar-row"><span>🚲 Modes actifs</span><div class="bar-track"><div class="bar-fill" id="b-act" style="background:#86efac"></div></div><span class="bar-val" id="v-act"></span></div>
+    </div>
+    <div id="scen-note"></div>
+  </div>
+  <p class="reveal">Même logique chez l'<b>ADEME</b> : quatre récits de la France 2050, de la « Génération frugale » (S1) au « Pari réparateur » (S4). Plus on refuse de changer de mode de vie, plus on parie sur des technologies non prouvées.</p>
+  <p class="reveal">La conférence <b>Fluxys</b> apporte la leçon de méthode du cours : son modèle de la mer du Nord est rigoureux — neutralité 2050 réaliste, à condition de combiner <b>électrons et molécules</b> (le stockage saisonnier : 254 TWh de méthane contre 1,3 TWh de batteries). Mais Fluxys vend… des réseaux de molécules. <b>Un scénario est un pari, et son auteur a des intérêts.</b></p>
+  <p class="reveal">Pendant ce temps, la société civile belge (marches jeunesse 2019, Sign for my Future et ses 340 000 signatures) converge vers trois outils : une <b>loi climat</b>, un <b>plan d'investissement</b>, un <b>conseil climat</b> indépendant.</p>
+</section>
+<div class="transition-line" style="--accent:var(--c4)"><span>Des scénarios aux actes : quels outils l'État a-t-il vraiment ?</span><span class="arrow">→</span></div>
+
+<!-- ================= CH 4 ================= -->
+<section class="chapter" id="ch4" style="--accent:var(--c4)">
+  <div class="chap-head reveal"><div class="chap-num">4</div><div><div class="chap-meta">Séance 4 · Les instruments</div><h2>La boîte à outils — et son outil explosif</h2></div></div>
+  <p class="big reveal">Cinq outils : informer, subventionner, réglementer, plafonner (ETS), <b>taxer le carbone</b>. Comme on ne peut pas interdire le pétrole, tout converge vers le signal-prix. C'est là que ça explose.</p>
+  <p class="reveal">L'Europe a empilé les paquets — « 20-20-20 » (atteint, avec un coup de pouce du Covid), −40 %, puis le <b>Green Deal</b> et ses −55 % pour 2030. Lecture critique du cours : une politique <b>réformiste</b>, qui veut de grands changements sans toucher aux structures. Et la Belgique ? Quatre gouvernements à mettre d'accord, des burden sharing conclus <i>après</i> le début des périodes qu'ils couvrent, un pays <b>hors trajectoire</b> sur ses objectifs 2030.</p>
+  <div class="viz reveal">
+    <h4>Taxe carbone + dividende : qui gagne, qui perd ? (Belgique, taxe 10 €/t redistribuée également)</h4>
+    <div class="bars">
+      <div class="bar-row"><span>Décile 1 (pauvre)</span><div class="bar-track"><div class="bar-fill" style="background:var(--c3)" data-w="100"></div></div><span class="bar-val" style="color:var(--c3)">+13</span></div>
+      <div class="bar-row"><span>Décile 3</span><div class="bar-track"><div class="bar-fill" style="background:var(--c3)" data-w="55"></div></div><span class="bar-val" style="color:var(--c3)">+7</span></div>
+      <div class="bar-row"><span>Décile 5 (médian)</span><div class="bar-track"><div class="bar-fill" style="background:#cbd5e1" data-w="4"></div></div><span class="bar-val">≈ 0</span></div>
+      <div class="bar-row"><span>Décile 8</span><div class="bar-track"><div class="bar-fill" style="background:var(--c8)" data-w="55"></div></div><span class="bar-val" style="color:var(--c8)">−7</span></div>
+      <div class="bar-row"><span>Décile 10 (riche)</span><div class="bar-track"><div class="bar-fill" style="background:var(--c8)" data-w="100"></div></div><span class="bar-val" style="color:var(--c8)">−13</span></div>
+    </div>
+    <div class="src">Redistribuée forfaitairement, la taxe devient progressive : les riches consomment plus d'énergie en valeur absolue. La redistribution est LA clé de l'acceptabilité.</div>
+  </div>
+  <p class="reveal">La preuve par l'échec : en France, la taxe carbone monte sans redistribution visible, en exemptant les gros émetteurs. Résultat : les <span class="keyterm">Gilets jaunes</span> (2018). Une taxe techniquement correcte peut échouer politiquement si la justice sociale est négligée. L'Europe a retenu la leçon à moitié : l'<b>ETS2</b> (quotas sur le chauffage et le carburant des ménages, ~2027) arrive flanqué d'un <b>Fonds social pour le climat</b>… dont personne ne sait s'il suffira (+150 €/an de gaz à 45 €/t, et des experts qui évoquent 200 €/t après 2030).</p>
+</section>
+<div class="transition-line" style="--accent:var(--c5)"><span>Chaque mesure déplace de l'argent. Suivons-le.</span><span class="arrow">→</span></div>
+
+<!-- ================= CH 5 ================= -->
+<section class="chapter" id="ch5" style="--accent:var(--c5)">
+  <div class="chap-head reveal"><div class="chap-num">5</div><div><div class="chap-meta">Séance 5 · Gagnants &amp; perdants</div><h2>Toute politique climat fait des gagnants et des perdants</h2></div></div>
+  <p class="big reveal">L'éolien dérange les riverains (NIMBY) — la Wallonie les transforme en co-propriétaires. Good Move apaise les quartiers — et soulève ceux qui les traversent. Et puis il y a le fiasco wallon par excellence :</p>
+  <div class="viz reveal">
+    <h4>La crise des certificats verts — cliquez sur chaque étape</h4>
+    <div class="steps" id="cv-steps">
+      <div class="step"><div class="dot"></div><div><div class="tt">Un soutien très généreux (Solwatt)</div><div class="dd">Pour lancer le photovoltaïque résidentiel, la Wallonie distribue des certificats verts (CV) très avantageux par MWh produit. Au même moment, le prix des panneaux s'effondre.</div></div></div>
+      <div class="step"><div class="dot"></div><div><div class="tt">Le boom dépasse toutes les prévisions</div><div class="dd">Installer devient une affaire en or — surtout pour les ménages aisés, propriétaires, capables d'avancer l'investissement.</div></div></div>
+      <div class="step"><div class="dot"></div><div><div class="tt">Surproduction : l'offre de CV dépasse le quota</div><div class="dd">Les fournisseurs n'ont plus besoin d'acheter tous les CV émis. Leur valeur menace de s'effondrer ; le régulateur organise des rachats garantis (Elia, Solar Chest…). Stock 2023 : 5,8 millions de CV invendus.</div></div></div>
+      <div class="step"><div class="dot"></div><div><div class="tt">Qui paie ? Tout le monde — surtout ceux qui n'ont pas de panneaux</div><div class="dd">Le coût des rachats est répercuté sur la facture d'électricité de tous : locataires et ménages modestes financent les panneaux des plus aisés. Une mesure régressive, mal calibrée.</div></div></div>
+    </div>
+  </div>
+  <div class="viz reveal">
+    <h4>Coût du soutien public par filière (€/MWh, Wallonie)</h4>
+    <div class="bars">
+      <div class="bar-row"><span>Solwatt (PV résid.)</span><div class="bar-track"><div class="bar-fill" style="background:var(--c5)" data-w="100"></div></div><span class="bar-val">~184</span></div>
+      <div class="bar-row"><span>Biogaz</span><div class="bar-track"><div class="bar-fill" style="background:#f9a8d4" data-w="75"></div></div><span class="bar-val">~138</span></div>
+      <div class="bar-row"><span>Solaire &gt;10 kW</span><div class="bar-track"><div class="bar-fill" style="background:#f9a8d4" data-w="41"></div></div><span class="bar-val">~76</span></div>
+      <div class="bar-row"><span>Éolien</span><div class="bar-track"><div class="bar-fill" style="background:var(--c3)" data-w="25"></div></div><span class="bar-val">~46</span></div>
+    </div>
+    <div class="src">CwaPE — le PV résidentiel a coûté ~4× plus cher par MWh que l'éolien, pour bien moins de production. Beaucoup d'argent, peu de décarbonation.</div>
+  </div>
+  <p class="reveal">2022 pousse la logique à l'absurde : flambée des prix, et l'État dépense <b>~0,9 % du PIB</b>… majoritairement pour <b>subventionner les fossiles</b> (TVA réduite, accises, chèques mazout) — pendant que les cartes carburant des voitures de société coûtent 667 M€/an. La tension <span class="keyterm">« fin du monde vs fin du mois »</span> en acte : on taxe le carbone d'une main, on le subventionne de l'autre.</p>
+  <p class="reveal">Et le verdict des données : le décile belge le plus riche émet <b>16,5 t/an</b>, le plus pauvre <b>4 t</b>. Les riches émettent le plus ; beaucoup de politiques pèsent sur les pauvres. Tout l'enjeu de la <b>transition juste</b> tient dans cette phrase.</p>
+</section>
+<div class="transition-line" style="--accent:var(--c6)"><span>Si les mesures sont si conflictuelles… comment en parle-t-on ?</span><span class="arrow">→</span></div>
+
+<!-- ================= CH 6 ================= -->
+<section class="chapter" id="ch6" style="--accent:var(--c6)">
+  <div class="chap-head reveal"><div class="chap-num">6</div><div><div class="chap-meta">Séance 6 · Les mots</div><h2>Les mots ne sont pas neutres</h2></div></div>
+  <p class="big reveal">72 % des Belges soutiendraient une taxe carbone — surtout les urbains, diplômés, aisés, sans voiture. Autrement dit : <b>ceux qui en paieraient le moins le prix</b>. L'opinion n'est pas une moyenne, c'est une carte sociale.</p>
+  <p class="reveal">La Suisse le montre en démocratie directe : oui à la neutralité 2050 quand c'est sans nouvelles taxes (2023), non dès que ça coûte (2025, 2026). La France l'a tenté en démocratie délibérative : 150 citoyens tirés au sort (la <b>CCC</b>), promesse de reprise « sans filtre »… et <b>12 %</b> des propositions reprises intégralement. Démocratique, oui — représentatif et suivi d'effets, c'est moins sûr.</p>
+  <p class="reveal">Dire « <b>Anthropocène</b> », c'est accuser l'humanité entière. Dire « <b>Capitalocène</b> », c'est accuser un système. <b>Nommer, c'est déjà prendre parti.</b> Et au-delà du déni, il existe tout un bestiaire de discours qui acceptent le problème… pour mieux retarder l'action :</p>
+  <div class="viz reveal">
+    <h4>Le catalogue de l'inaction (Lamb et al., 2020) — cliquez sur chaque famille</h4>
+    <div class="lamb">
+      <div class="lamb-cell"><div class="tt">1. « C'est aux autres d'agir »</div><div class="sub">détourner la responsabilité</div><ul><li><b>Individualisme</b> : c'est au consommateur d'agir</li><li><b>Whataboutism</b> : « et la Chine, alors ? »</li><li><b>Compétition</b> : agir nous affaiblirait</li></ul></div>
+      <div class="lamb-cell"><div class="tt">2. « Des petits changements suffisent »</div><div class="sub">minimiser l'effort</div><ul><li><b>Optimisme technologique</b> : la techno sauvera tout</li><li><b>Belles paroles</b> : cibles votées, rien d'agi</li><li><b>Compromis carboné</b> : le fossile « efficace » fait partie de la solution</li></ul></div>
+      <div class="lamb-cell"><div class="tt">3. « Attention aux coûts »</div><div class="sub">brandir le social</div><ul><li><b>Carottes sans bâtons</b> : jamais de contraintes</li><li><b>Développement</b> : le Sud a besoin du fossile</li><li><b>« Attention aux gilets jaunes »</b> : l'argument social instrumentalisé pour ne rien faire</li></ul></div>
+      <div class="lamb-cell"><div class="tt">4. « On n'y arrivera jamais »</div><div class="sub">capituler</div><ul><li><b>Perfectionnisme</b> : n'agir que si tout le monde est d'accord</li><li><b>Dictature verte</b> : incompatible avec la démocratie</li><li><b>Catastrophisme</b> : trop tard, adaptons-nous</li></ul></div>
+    </div>
+    <div class="src">Une grille de décodage : beaucoup d'arguments « de bon sens » des médias sont des stratégies de retardement.</div>
+  </div>
+</section>
+<div class="transition-line" style="--accent:var(--c7)"><span>Retarder a un coût. Car pendant ce temps, les impacts arrivent.</span><span class="arrow">→</span></div>
+
+<!-- ================= CH 7 ================= -->
+<section class="chapter" id="ch7" style="--accent:var(--c7)">
+  <div class="chap-head reveal"><div class="chap-num">7</div><div><div class="chap-meta">Séance 7 + conf. CERAC · S'adapter</div><h2>« Agir, c'est compter »</h2></div></div>
+  <p class="big reveal">Jusqu'ici, tout visait la <b>cause</b> (atténuation). Mais une partie des impacts est désormais inévitable : il faut aussi gérer les <b>conséquences</b> (adaptation). Et mal s'adapter — la <span class="keyterm">maladaptation</span> — peut être pire que ne rien faire.</p>
+  <div class="viz reveal">
+    <h4>La formule de l'adaptation — cliquez sur chaque facteur</h4>
+    <div class="riskf">
+      <span style="padding:10px 4px">RISQUE =</span>
+      <span class="rterm a" data-r="a">ALÉA</span><span>×</span>
+      <span class="rterm v" data-r="v">VULNÉRABILITÉ</span><span>×</span>
+      <span class="rterm e" data-r="e">EXPOSITION</span>
+    </div>
+    <div id="risk-info">L'intuition clé : on ne contrôle pas l'aléa — mais on peut quand même réduire le risque. Cliquez sur les facteurs.</div>
+  </div>
+  <p class="reveal">Côté entreprises, le climat devient comptable : le <b>Bilan Carbone®</b> (3 scopes, toute la chaîne de valeur), puis la <b>CSRD</b> qui fait passer le reporting du volontaire à l'<b>obligation légale</b>. « Ce sera un combat, et il sera ennuyeux. »</p>
+  <p class="reveal">Côté État, les inondations de 2021 (39 morts, 5,2 Md€) accouchent du <b>CERAC</b> — une première : un centre d'analyse des risques climatiques qui rapporte au <b>Conseil national de sécurité</b>. Sa première analyse (BCRA, 2025) passe 28 risques au crible :</p>
+  <div class="viz reveal">
+    <h4>BCRA 2025 — les 6 risques exigeant une action urgente 🔴</h4>
+    <div class="chips">
+      <span class="chip">Assurances ← inondations</span>
+      <span class="chip">Bâtiments ← inondations</span>
+      <span class="chip">Santé ← chaleur</span>
+      <span class="chip">Santé ← zoonoses pandémiques</span>
+      <span class="chip">Cultures ← météo extrême</span>
+      <span class="chip">Production alimentaire ← sols dégradés</span>
+    </div>
+    <div class="src">Préparation politique de la Belgique : 0 risque « très avancé », 4 avancés, 16 moyens, 8 bas. Coût de l'inaction : &gt;30 Md€.</div>
+  </div>
+  <p class="reveal">Le plus frappant : les risques sont <b>systémiques</b>. Une inondation bloque les routes, qui bloque les secours ; la chaleur frappe l'emploi et le logement, qui creusent les inégalités, qui rongent la confiance et la cohésion. Conclusion du CERAC, à retenir mot pour mot : <b>« la justice sociale climatique est une condition de sécurité nationale »</b>. Jusqu'à la sécurité sociale elle-même, qu'un collectif de chercheurs propose de refonder en « protection sociale-écologique ».</p>
+</section>
+<div class="transition-line" style="--accent:var(--c8)"><span>Reste la question que tout le cours préparait.</span><span class="arrow">→</span></div>
+
+<!-- ================= CH 8 ================= -->
+<section class="chapter" id="ch8" style="--accent:var(--c8)">
+  <div class="chap-head reveal"><div class="chap-num">8</div><div><div class="chap-meta">Séance 8 · Conclusion</div><h2>Le climat est-il soluble dans la démocratie ?</h2></div></div>
+  <p class="big reveal">« Par quoi serons-nous sauvés ? » La foi ? Le pape parle de bien commun, la Genèse de domination. La technologie ? La géo-ingénierie est un pansement risqué (souvenez-vous de Tambora, 1815 : un climat brutalement modifié = famines et troubles). L'économie ? <b>Nordhaus</b>, seul Nobel d'économie du climat, jugeait +3°C « optimal ». La justice, alors ?</p>
+  <p class="reveal">Là, quelque chose bouge vraiment : <b>Urgenda</b> condamne l'État néerlandais (2019), l'<b>Affaire Climat</b> fait ordonner −55 % à la Belgique en appel (2023), et la <b>CEDH</b> condamne la Suisse (2024) — un droit à la protection climatique naît de l'article 8. Le droit devient le levier de ceux que la politique n'écoute pas.</p>
+  <p class="reveal">Mais le cœur du problème est plus profond. <b>Charbonnier</b> et <b>Mitchell</b> le formulent : notre idée même de la <b>liberté</b> est née de l'abondance fossile. La démocratie libérale est prise dans trois contractions — <b>matérielle</b> (les ressources), <b>temporelle</b> (les délais), <b>démocratique</b> (l'éventail des choix se réduit). D'où la tentation : et si un régime autoritaire faisait mieux ? Le cours répond : c'est un <b>mythe</b> (et Madelin documente sa dérive écofasciste).</p>
+  <p class="reveal">Dernier piège : le <span class="keyterm">deadline-ism</span>. « Plus que 10 ans pour sauver la planète » — faux. 1,5°C et 2°C sont des objectifs <b>politiques</b>, pas des seuils scientifiques ; chaque dixième de degré compte. Présenter un choix de société comme une échéance technique, c'est le dépolitiser.</p>
+  <blockquote class="reveal">Monter progressivement le prix des énergies fossiles renchérira tout — mais nous l'acceptons, car la paix, la stabilité, un minimum de prospérité et l'espérance de vie de nos enfants sont à ce prix.<span class="who">Conclusion (provisoire) du Pr Vandeburie</span></blockquote>
+  <p class="reveal">La seule condition d'acceptabilité qui tienne, sondage après sondage : que l'effort soit <b>partagé de façon juste</b> (66 % des Français, ADEME). La boucle est bouclée — le climat est bien une question de <b>partage</b>, donc de politique.</p>
+</section>
+
+<!-- ================= TIMELINE ================= -->
+<section class="tl-section" id="timeline">
+  <div class="tl-head">
+    <div class="kicker">Deuxième lecture</div>
+    <h2>⏳ 50 ans de mesures — et comment elles s'enchaînent</h2>
+    <p>Cliquez sur un événement pour ses détails et ses <b>connexions causales</b> : chaque mesure répond à une autre, l'imite, la corrige ou la subit.</p>
+  </div>
+  <div class="tl-filters" id="tl-filters">
+    <button data-l="int"><span class="sw" style="background:var(--int)"></span>🌍 International</button>
+    <button data-l="ue"><span class="sw" style="background:var(--ue)"></span>🇪🇺 Union européenne</button>
+    <button data-l="be"><span class="sw" style="background:var(--be)"></span>🇧🇪 Belgique</button>
+    <button data-l="soc"><span class="sw" style="background:var(--soc)"></span>⚖️ Société &amp; justice</button>
+  </div>
+  <p class="tl-hint">Les boutons filtrent par niveau · Les puces « ⟶ » dans une carte ouverte sautent vers l'événement lié</p>
+  <div class="tl-wrap" id="tl"></div>
+</section>
+
+<!-- ================= EPILOGUE ================= -->
+<section class="epilogue">
+  <h2>L'histoire en une phrase</h2>
+  <p>Un problème physique <b>(ch. 1-2)</b> a des solutions connues <b>(ch. 3)</b>, mais leur mise en œuvre <b>(ch. 4)</b> crée des perdants <b>(ch. 5)</b>, se joue dans les mots <b>(ch. 6)</b>, exige de s'adapter <b>(ch. 7)</b> — et pose finalement la question du contrat démocratique lui-même <b>(ch. 8)</b>.</p>
+</section>
+<footer>ENVI-F405 · Climat : Sciences &amp; Politiques · support de révision généré à partir des notes de cours</footer>
+
+<script>
+/* ---------- progress bar ---------- */
+const prog=document.getElementById('progress');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+},{passive:true});
+
+/* ---------- reveal on scroll ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    e.target.classList.add('vis');
+    e.target.querySelectorAll('.bar-fill[data-w]').forEach(b=>b.style.width=b.dataset.w+'%');
+    e.target.querySelectorAll('[data-count]').forEach(n=>{
+      if(n.dataset.done)return; n.dataset.done=1;
+      const target=+n.dataset.count, suf=n.dataset.suffix||''; let cur=0;
+      const t=setInterval(()=>{cur+=Math.ceil(target/40); if(cur>=target){cur=target;clearInterval(t);} n.textContent=cur+suf;},30);
+    });
+  }
+}),{threshold:.18});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- chapter nav ---------- */
+const chapters=[...document.querySelectorAll('.chapter, .tl-section')];
+const navLinks=[...document.querySelectorAll('#chapnav a')];
+const io2=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    const i=chapters.indexOf(e.target);
+    navLinks.forEach((a,j)=>a.classList.toggle('active',j===i));
+  }
+}),{threshold:.25});
+chapters.forEach(c=>io2.observe(c));
+
+/* ---------- Kaya ---------- */
+const kayaTexts={
+  co2:"<b>CO₂</b> — le résultat : les émissions totales. Pour les faire baisser, il faut qu'au moins un des 4 facteurs baisse plus vite que les autres ne montent.",
+  pop:"<b>POP</b> — la population. Levier réel mais politiquement presque intouchable : aucun gouvernement n'en fait un instrument climatique.",
+  rich:"<b>PIB/POP</b> — la richesse par habitant. Le levier tabou : y toucher = décroissance ou sobriété. C'est pourtant le facteur qui annule tous les gains d'efficacité.",
+  eff:"<b>E/PIB</b> — l'intensité énergétique : combien d'énergie pour produire 1 € de richesse. Levier de l'<b>efficacité énergétique</b> (isolation, process industriels…). En baisse de 50 % depuis 1965 — pas suffisant.",
+  carb:"<b>CO₂/E</b> — l'intensité carbone de l'énergie : combien de CO₂ par unité d'énergie. Levier de la <b>décarbonation du mix</b> (renouvelables, nucléaire). Quasi stagnant au niveau mondial."
+};
+document.querySelectorAll('.kterm').forEach(k=>k.addEventListener('click',()=>{
+  document.querySelectorAll('.kterm').forEach(x=>x.classList.remove('on'));
+  k.classList.add('on');
+  document.getElementById('kaya-info').innerHTML=kayaTexts[k.dataset.k];
+}));
+
+/* ---------- scenario picker ---------- */
+const scen={
+  ref:{car:75,rail:8,act:7,note:"« Business as usual » : en 2050, rien n'a bougé — et la demande totale a explosé. Le scénario de l'inaction."},
+  core:{car:55,rail:16,act:16,note:"Le scénario central −95 % : la voiture recule nettement, rail et vélo doublent. Équilibre techno + comportement."},
+  beh:{car:39,rail:20,act:22,note:"Le pari du comportement : moins de km, parc automobile divisé par 15 (~0,5 M de voitures). Seul scénario où la voiture devient minoritaire."},
+  tech:{car:61,rail:13,act:14,note:"Le pari de la technologie : on électrifie tout (BEV, hydrogène)… mais on reste dépendant de la voiture. La techno ne change pas les habitudes."}
+};
+function setScen(s){
+  const d=scen[s];
+  document.getElementById('b-car').style.width=d.car+'%';
+  document.getElementById('b-rail').style.width=d.rail*2.2+'%';
+  document.getElementById('b-act').style.width=d.act*2.2+'%';
+  document.getElementById('v-car').textContent=d.car+' %';
+  document.getElementById('v-rail').textContent=d.rail+' %';
+  document.getElementById('v-act').textContent=d.act+' %';
+  document.getElementById('scen-note').textContent=d.note;
+}
+document.querySelectorAll('#scen-seg button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#scen-seg button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); setScen(b.dataset.s);
+}));
+setTimeout(()=>setScen('ref'),600);
+
+/* ---------- CV steps / lamb ---------- */
+document.querySelectorAll('.step').forEach(s=>s.addEventListener('click',()=>s.classList.toggle('open')));
+document.querySelectorAll('.lamb-cell').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('open')));
+
+/* ---------- risk formula ---------- */
+const riskTexts={
+  a:"<b>L'aléa</b> — le phénomène lui-même : inondation, canicule, sécheresse. C'est le facteur qu'on ne contrôle pas (ou seulement via l'atténuation, sur des décennies).",
+  v:"<b>La vulnérabilité</b> — la sensibilité aux dommages et la capacité à y faire face. Réductible : renforcer les bâtiments, protéger les groupes fragiles, préparer les secours. C'est aussi ici que se loge la justice sociale.",
+  e:"<b>L'exposition</b> — qui et quoi se trouve sur le chemin de l'aléa. Réductible : ne plus construire en zone inondable, restaurer les zones humides, repenser l'aménagement du territoire."
+};
+document.querySelectorAll('.rterm').forEach(r=>r.addEventListener('click',()=>{
+  document.querySelectorAll('.rterm').forEach(x=>x.classList.remove('on'));
+  r.classList.add('on');
+  document.getElementById('risk-info').innerHTML=riskTexts[r.dataset.r];
+}));
+
+/* ================= TIMELINE DATA ================= */
+const LANES={int:{name:'International',color:'var(--int)'},ue:{name:'Union européenne',color:'var(--ue)'},be:{name:'Belgique',color:'var(--be)'},soc:{name:'Société & justice',color:'var(--soc)'}};
+const EV=[
+ {id:'meadows',y:1972,l:'soc',t:'Rapport Meadows (Club de Rome)',d:"« Les limites à la croissance » : première grande alerte sur l'incompatibilité entre croissance infinie et planète finie. Matrice intellectuelle de la décroissance.",lk:[['decroissance','inspire la décroissance']]},
+ {id:'geneve',y:1979,l:'int',t:'1ʳᵉ Conférence mondiale sur le climat (Genève)',d:"Le changement climatique est reconnu pour la première fois comme un grave problème mondial (OMM + PNUE).",lk:[['giec','mène à la création du GIEC']]},
+ {id:'brundtland',y:1987,l:'int',t:'Rapport Brundtland',d:"« Our Common Future » : naissance du développement durable — répondre aux besoins du présent sans compromettre les générations futures.",lk:[['rio','prépare Rio 1992']]},
+ {id:'giec',y:1988,l:'int',t:'Création du GIEC (+ conf. de Toronto)',d:"L'OMM et le PNUE créent le GIEC : fournir aux décideurs une analyse objective de la science climatique. Toronto lance le premier appel à des objectifs chiffrés.",lk:[['rio','fonde scientifiquement la CCNUCC'],['paris','ses rapports cadrent chaque accord']]},
+ {id:'rio',y:1992,l:'int',t:'CCNUCC (Sommet de Rio)',d:"La convention-cadre : stabiliser les GES à un niveau non dangereux. Principes fondateurs : responsabilités communes mais différenciées, précaution. 196 États + UE.",lk:[['cop1','crée le processus des COP'],['cnc','oblige la Belgique à se coordonner (rapportage)'],['kyoto','prépare Kyoto']]},
+ {id:'cop1',y:1995,l:'int',t:'COP1 à Berlin',d:"Première Conférence des Parties : le processus annuel de négociation se met en route.",lk:[['kyoto','aboutit à Kyoto (COP3)']]},
+ {id:'cible2c',y:1996,l:'ue',t:"L'UE fixe la cible des 2 °C",d:"Le Conseil européen adopte la limite des 2 °C — bien avant qu'elle ne devienne internationale (Copenhague 2009, Paris 2015).",lk:[['copenhague','la cible devient mondiale en 2009']]},
+ {id:'kyoto',y:1997,l:'int',t:'Protocole de Kyoto',d:"Approche top-down : −5 % vs 1990 pour les seuls pays développés, mécanismes de flexibilité. Les USA ne ratifieront jamais (36 % des émissions 1990) ; le Canada se retirera. Un échec instructif.",lk:[['ets','pousse l\'UE à créer son marché carbone'],['copenhague','son échec mène à Copenhague'],['paris','Paris inverse sa philosophie']]},
+ {id:'iris1',y:1998,l:'be',t:'Plan Iris I (mobilité, Bruxelles)',d:"Premier plan régional de mobilité bruxellois — l'ancêtre de Good Move.",lk:[['goodmove','aboutira à Good Move']]},
+ {id:'ets',y:2001,l:'ue',t:'Paquet Climat 2001 → création de l\'ETS',d:"Pour tenir Kyoto malgré le retrait américain, l'UE crée le SEQE/ETS : plafond + marché de quotas (cap and trade). Opérationnel en 2005. Bilan mitigé : sur-allocation, fuite carbone.",lk:[['kyoto','réponse directe à Kyoto'],['p2020','intégré aux paquets suivants'],['cbam','sa fuite carbone mènera au CBAM'],['ets2','sera étendu aux ménages (ETS2)']]},
+ {id:'cnc',y:2002,l:'be',t:'Accord de coopération → CNC',d:"Création de la Commission nationale Climat (16 membres, 4 par entité) : coordonner le plan climat belge et le rapportage international. Le fédéralisme climatique s'institutionnalise — lentement.",lk:[['rio','découle des obligations CCNUCC'],['pnec','coordonnera le PNEC'],['bs','théâtre des burden sharing laborieux']]},
+ {id:'cv',y:2003,l:'be',t:'Certificats verts wallons (quota 3 %)',d:"Mécanisme de soutien au renouvelable : 1 CV par MWh vert + quota imposé aux fournisseurs. Le quota grimpera de 3 % (2003) à ~40 % (2023). Avec Solwatt, le PV résidentiel devient très généreusement soutenu.",lk:[['crisecv','provoquera la crise des CV']]},
+ {id:'p2020',y:2008,l:'ue',t:'Paquet Climat 2020 : « 20-20-20 »',d:"−20 % GES, 20 % renouvelables, −20 % de consommation pour 2020. Sera atteint (−31 % en 2020… avec l'aide du Covid).",lk:[['ets','s\'appuie sur l\'ETS'],['p2030','suivi du paquet 2030'],['bs','décliné en burden sharing belge']]},
+ {id:'copenhague',y:2009,l:'int',t:'COP15 Copenhague : l\'échec fondateur',d:"La COP qui devait succéder à Kyoto échoue. Mais première mention officielle de l'objectif 2 °C. La leçon servira : il faudra une autre méthode.",lk:[['kyoto','hérite de l\'impasse de Kyoto'],['paris','Paris naît de cet échec']]},
+ {id:'iris2',y:2010,l:'be',t:'Plan Iris II (Bruxelles)',d:"Deuxième plan de mobilité bruxellois.",lk:[['goodmove','précède Good Move']]},
+ {id:'crisecv',y:2012,l:'be',t:'Crise des certificats verts (Solwatt)',d:"Soutien trop généreux + chute du prix des panneaux → boom du PV, surproduction de CV, effondrement de la valeur, rachats garantis. 5,8 M de CV invendus (2023), coût répercuté sur la facture de tous. Le fiasco emblématique des gagnants/perdants : régressif et inefficient (~184 €/MWh vs ~46 pour l'éolien).",lk:[['cv','emballement du mécanisme de 2003'],['gj','même leçon que les Gilets jaunes : qui paie ?']]},
+ {id:'decretw',y:2014,l:'be',t:'Décret climat wallon',d:"La Wallonie inscrit ses objectifs dans un décret : −30 % en 2020, −95 % en 2050. Le fédéral, lui, n'aura jamais de loi climat aboutie.",lk:[['loiclimat','contraste avec l\'échec fédéral']]},
+ {id:'p2030',y:2014,l:'ue',t:'Paquet Climat 2030',d:"−40 % GES en 2030 (contraignant), 32 % renouvelables. L'ambition monte d'un cran — et l'écart avec les actions aussi.",lk:[['p2020','succède au 20-20-20'],['greendeal','sera durci par le Green Deal']]},
+ {id:'miseendemeure',y:2014,l:'soc',t:'L\'Affaire Climat met la Belgique en demeure',d:"L'ASBL Klimaatzaak (+70 000 codemandeurs) met en demeure les 4 autorités belges : la politique climatique viole le devoir de diligence et les droits humains.",lk:[['urgenda','inspirée par Urgenda'],['jugement21','aboutira au jugement de 2021']]},
+ {id:'paris',y:2015,l:'int',t:'Accord de Paris (COP21)',d:"Le grand renversement : bottom-up, universel (194 États), objectif 1,5-2 °C et neutralité carbone — mais non contraignant. Chacun soumet ses NDC tous les 5 ans, bilan mondial (Global Stocktake) tous les 5 ans.",lk:[['copenhague','réponse à l\'échec de 2009'],['kyoto','philosophie inverse de Kyoto'],['greendeal','l\'UE le traduit en Green Deal'],['stocktake','premier bilan en 2023']]},
+ {id:'urgenda',y:2015,l:'soc',t:'Urgenda : 1ʳᵉ victoire climatique en justice',d:"La justice néerlandaise enjoint l'État d'intensifier sa politique climatique (devoir de diligence + CEDH art. 2 et 8). Confirmé en cassation en 2019. Le droit devient un levier climatique mondial.",lk:[['miseendemeure','inspire l\'Affaire Climat belge'],['cedh','ouvre la voie à la CEDH 2024']]},
+ {id:'fiscbe',y:2017,l:'be',t:'Débat national sur la fiscalité carbone',d:"Une tarification carbone belge pourrait rapporter 2,6 Md€/an en 2030 : tax shift, compensation des ménages modestes, financement des alternatives. Resté largement théorique.",lk:[['gj','les Gilets jaunes refroidissent le débat'],['ets2','l\'ETS2 imposera le sujet']]},
+ {id:'gj',y:2018,l:'soc',t:'Gilets jaunes (France)',d:"La taxe carbone française monte sans redistribution visible, en exemptant les gros émetteurs. Révolte. Leçon centrale du cours : une taxe techniquement correcte échoue politiquement sans justice sociale.",lk:[['fiscbe','gèle les ambitions fiscales belges'],['ets2','l\'UE invente le Fonds social pour l\'éviter'],['ccc','Macron répond par la Convention citoyenne'],['lamb','devient un argument d\'inaction (Lamb, famille 3)']]},
+ {id:'marches',y:2019,l:'soc',t:'Marches jeunesse & Youth for Climate',d:"Mobilisation massive des jeunes en Belgique. Un panel d'experts (van Ypersele, Van Broeck) répond avec 23 mesures en 7 axes : loi spéciale climat, stop béton, transfert modal, conseil climat…",lk:[['signfor','en parallèle de Sign for my Future'],['loiclimat','réclame une loi climat']]},
+ {id:'signfor',y:2019,l:'soc',t:'Sign for my Future (340 000 signatures)',d:"Citoyens, entreprises et société civile exigent : une loi climat, un plan d'investissement juste, un conseil climat indépendant.",lk:[['marches','même élan que les marches'],['loiclimat','pousse la loi climat']]},
+ {id:'greendeal',y:2019,l:'ue',t:'Green Deal européen',d:"Von der Leyen : neutralité 2050, −55 % en 2030 (Fit for 55), durabilité « dans toutes les politiques ». Lecture critique du cours : réformiste — de grands changements sans toucher aux structures, et sans vraie politique de justice.",lk:[['paris','traduction européenne de Paris'],['p2030','durcit le paquet 2030'],['ets2','engendre l\'ETS2'],['cbam','engendre le CBAM']]},
+ {id:'ccc',y:2019,l:'soc',t:'Convention citoyenne pour le climat (France)',d:"150 citoyens tirés au sort, promesse de reprise « sans filtre » : seules 12 % des propositions reprises intégralement. Démocratique mais : représentativité ? légitimité ? La participation a ses limites.",lk:[['gj','réponse politique aux Gilets jaunes'],['votations','même question qu\'en Suisse : qui décide ?']]},
+ {id:'goodmove',y:2020,l:'be',t:'Good Move (Bruxelles)',d:"Plan de mobilité co-construit : quartiers apaisés, « orienter les choix sans nuire à la liberté ». Fortes contestations locales — gagnants (riverains, cyclistes) contre perdants (transit, commerçants).",lk:[['iris1','aboutissement d\'Iris I et II'],['crisecv','même grille gagnants/perdants']]},
+ {id:'lamb',y:2020,l:'soc',t:'Lamb et al. : les « discours du délai »',d:"Le catalogue académique de l'inaction : 12 discours en 4 familles qui acceptent le problème mais retardent l'action (responsabilité détournée, petits pas, coûts, capitulation). La grille de décodage de la séance 6.",lk:[['gj','« attention aux gilets jaunes » = argument type']]},
+ {id:'inond',y:2021,l:'be',t:'Inondations de juillet 2021',d:"39 morts, 100 000 personnes touchées, 5,2 Md€. La vallée de la Vesdre dévastée, effets en cascade (électricité, télécoms, secours). Le choc fondateur de l'adaptation belge.",lk:[['cerac','déclenche la création du CERAC'],['jugement21','contexte du jugement Affaire Climat']]},
+ {id:'jugement21',y:2021,l:'soc',t:'Affaire Climat : jugement (17 juin)',d:"Les 4 autorités belges condamnées pour politique climatique négligente (faute + violation CEDH) — mais sans objectifs chiffrés imposés. L'appel changera ça.",lk:[['miseendemeure','suite de 2014-2015'],['appel23','l\'appel de 2023 ira plus loin']]},
+ {id:'ordbxl',y:2021,l:'be',t:'Ordonnance climat bruxelloise',d:"Bruxelles inscrit la neutralité 2050 dans la loi : −40 % (2030), −67 % (2040), −90 % (2050, vs 2005).",lk:[['decretw','pendant bruxellois du décret wallon']]},
+ {id:'paxeol',y:2022,l:'be',t:'Pax Eolienica II',d:"Plan wallon : 6 200 GWh éoliens en 2030. Innovation politique : participation citoyenne et communale imposée — transformer les perdants du NIMBY en co-gagnants.",lk:[['crisecv','retient la leçon des CV : l\'éolien est 4× plus efficient']]},
+ {id:'prix22',y:2022,l:'be',t:'Crise des prix : ~0,9 % du PIB de mesures',d:"Guerre en Ukraine, flambée des prix : TVA 6 %, baisses d'accises, chèques mazout… majoritairement des subventions aux fossiles. « Fin du mois » bat « fin du monde » — en pleine décennie critique.",lk:[['gj','même peur politique que les Gilets jaunes'],['ets2','complique l\'arrivée de l\'ETS2']]},
+ {id:'bs',y:2022,l:'be',t:'Burden sharing 2021-2030 (accord partiel)',d:"Comme en 2018 pour la période… 2013-2020, l'accord intra-belge arrive en retard et incomplet. Le symptôme du fédéralisme climatique.",lk:[['cnc','négocié au sein de la CNC'],['pnec','conditionne le PNEC']]},
+ {id:'stocktake',y:2023,l:'int',t:'1ᵉʳ Global Stocktake',d:"Le premier bilan mondial de Paris est alarmant : le monde est « off track », ~22 Gt à éliminer d'ici 2030. Le mécanisme de révision fonctionne — les actions, moins.",lk:[['paris','prévu par l\'Accord de Paris']]},
+ {id:'votations',y:2023,l:'soc',t:'Votations suisses (2023-2026)',d:"2023 : oui (59 %) à la neutralité 2050 — sans nouvelles taxes. 2025 : non (70 %) aux limites planétaires. 2026 : non (71 %) au fonds climat. Adhésion conditionnelle : oui au climat, tant que ça ne coûte pas.",lk:[['ccc','autre visage de la participation'],['gj','même variable : le coût visible']]},
+ {id:'appel23',y:2023,l:'soc',t:'Affaire Climat : l\'appel ordonne −55 %',d:"30 nov. 2023 : la cour d'appel confirme la violation des droits humains ET ordonne une réduction d'au moins 55 % d'ici 2030. La Flandre se pourvoit en cassation. Le juge fixe désormais l'objectif que le politique n'a pas voté.",lk:[['jugement21','durcit le jugement de 2021'],['loiclimat','supplée l\'absence de loi climat'],['cedh','dans la vague jurisprudentielle européenne']]},
+ {id:'cedh',y:2024,l:'soc',t:'CEDH : la Suisse condamnée (Aînées pour le climat)',d:"9 avril 2024, première mondiale : la CEDH reconnaît (art. 8) un droit à une protection effective contre les effets graves du changement climatique. ~2 500 requérantes âgées.",lk:[['urgenda','aboutissement de la voie ouverte en 2015'],['appel23','renforce l\'Affaire Climat']]},
+ {id:'pnec',y:2024,l:'be',t:'PNEC évalué : Belgique hors trajectoire',d:"Bureau fédéral du Plan : non-ETS −32 % réalisé vs −47 % requis ; renouvelables 24 % vs 34 %. La Belgique ne tiendra ses objectifs que par les « flexibilités ».",lk:[['cnc','produit par la coordination CNC'],['bs','plombé par les retards du burden sharing']]},
+ {id:'cerac',y:2025,l:'be',t:'CERAC ancré par arrêté royal + BCRA',d:"Né des inondations de 2021, le Centre d'analyse des risques climatiques rapporte au Conseil national de sécurité. Sa première analyse (BCRA) : 28 risques, 6 urgents, préparation insuffisante. « La justice sociale climatique est une condition de sécurité nationale. »",lk:[['inond','réponse institutionnelle à 2021'],['eucra','décline l\'EUCRA européen']]},
+ {id:'eucra',y:2024,l:'ue',t:'EUCRA : 36 risques pour l\'Europe',d:"Première évaluation européenne des risques climatiques : l'Europe est le continent qui se réchauffe le plus vite (déjà ~+1,5 °C).",lk:[['cerac','cadre de référence de la BCRA belge']]},
+ {id:'cbam',y:2026,l:'ue',t:'CBAM (ajustement carbone aux frontières)',d:"Taxer les importations selon leur contenu carbone, pour que les produits étrangers « sales » ne contournent pas l'ETS. La réponse à la fuite carbone — et un test géopolitique majeur.",lk:[['ets','corrige la faille de l\'ETS'],['greendeal','pièce du Fit for 55']],f:1},
+ {id:'ets2',y:2027,l:'ue',t:'ETS2 : le carbone arrive chez les ménages',d:"Extension des quotas au chauffage et au transport routier. À 45 €/t : +150 €/an de gaz pour un ménage moyen ; certains experts évoquent 200 €/t après 2030. Garde-fou anti-Gilets jaunes : le Fonds social pour le climat. Suffisant ?",lk:[['ets','extension de l\'ETS de 2001'],['gj','conçu avec la leçon des Gilets jaunes'],['fiscbe','tranche le débat fiscal belge'],['prix22','dans un contexte de prix sensibles']],f:1},
+ {id:'loiclimat',y:2026,l:'be',t:'Loi spéciale climat : toujours rien',d:"Le projet d'ancrer des objectifs climatiques dans une norme quasi constitutionnelle n'a jamais abouti au fédéral. Ce vide que réclamaient experts et citoyens (2019), c'est le juge qui le comble (appel 2023).",lk:[['marches','réclamée depuis 2019'],['appel23','le juge supplée le législateur'],['decretw','seules les Régions ont légiféré']],f:1},
+ {id:'decroissance',y:2026,l:'soc',t:'Le débat de fond : croissance verte vs décroissance',d:"Du Club de Rome (1972) à aujourd'hui : faut-il verdir la croissance (Green Deal, techno) ou en sortir (post-croissance, bien-être durable) ? L'axe réformiste/révolutionnaire qui traverse tout le cours — et la question laissée ouverte en séance 8.",lk:[['meadows','héritier du rapport Meadows'],['greendeal','le Green Deal incarne le pôle réformiste']],f:1},
+];
+
+/* ---------- render timeline ---------- */
+const tl=document.getElementById('tl');
+const sorted=[...EV].sort((a,b)=>a.y-b.y);
+let lastDecade=null,side=0;
+const frag=document.createDocumentFragment();
+sorted.forEach(e=>{
+  const dec=Math.floor(e.y/10)*10;
+  if(dec!==lastDecade){
+    lastDecade=dec;
+    const m=document.createElement('div');m.className='yr-marker';m.innerHTML=`<span>Années ${dec}</span>`;
+    frag.appendChild(m);
+  }
+  const div=document.createElement('div');
+  div.className='ev '+(side%2?'right':'left')+(e.f?' future':'');
+  div.id='ev-'+e.id;
+  div.dataset.lane=e.l;
+  div.style.setProperty('--ec',LANES[e.l].color);
+  const links=(e.lk||[]).map(([to,lab])=>`<span class="lk" data-to="${to}">⟶ ${lab}</span>`).join('');
+  div.innerHTML=`<div class="node"></div><div class="card">
+    <div class="yr">${e.y}${e.f?' · à suivre':''}</div>
+    <div class="tt">${e.t}</div>
+    <div class="lane-tag">${LANES[e.l].name}</div>
+    <div class="dd">${e.d}</div>
+    <div class="links">${links}</div></div>`;
+  frag.appendChild(div);
+  side++;
+});
+tl.appendChild(frag);
+
+tl.addEventListener('click',ev=>{
+  const lk=ev.target.closest('.lk');
+  if(lk){
+    ev.stopPropagation();
+    const target=document.getElementById('ev-'+lk.dataset.to);
+    if(target){
+      target.scrollIntoView({behavior:'smooth',block:'center'});
+      target.classList.add('open','flash');
+      setTimeout(()=>target.classList.remove('flash'),2200);
+    }
+    return;
+  }
+  const card=ev.target.closest('.ev');
+  if(card)card.classList.toggle('open');
+});
+
+/* lane filters */
+const active=new Set(['int','ue','be','soc']);
+document.querySelectorAll('#tl-filters button').forEach(b=>b.addEventListener('click',()=>{
+  const l=b.dataset.l;
+  if(active.has(l)&&active.size>1){active.delete(l);b.classList.add('off');}
+  else{active.add(l);b.classList.remove('off');}
+  document.querySelectorAll('.ev').forEach(e=>e.classList.toggle('dim',!active.has(e.dataset.lane)));
+}));
+</script>
+</body>
+</html>

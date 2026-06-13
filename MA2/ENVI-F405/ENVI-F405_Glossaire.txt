@@ -1,0 +1,15 @@
+#separator:tab
+#html:true
+CCNUCC trad	Convention Cadre des Nations Unies sur le Changement Climatique&nbsp;
+COP&nbsp;	Conference of Parties
+GES&nbsp;	Gaz à effet de serre&nbsp;
+GIEC	<table><tbody><tr><td>Groupe d'experts Intergouvernemental sur l'Évolution du Climat. (IPCC en anglais)</td></tr></tbody></table>
+NDC	<table><tbody><tr><td><em>Nationally Determined Contribution</em></td></tr></tbody></table>Contribution déterminée au niveau national — engagement climatique soumis par chaque État, révisé tous les 5 ans<br>
+OMM	Organisation Metéorologique Mondiale
+ONG&nbsp;	Organisation non gouvernementale&nbsp;
+PNUE&nbsp;	Programmes des Nations Unies pour l'Environnement
+ERoEI	"<img src=""paste-2d3cf64a7e62e5f3398b4844037b59717d2497ee.jpg"">"
+PNC/PNEC	Plan National (energie) Climat<br>obligation du ccnucc et kyoto de fournir un rapport par pays (et regions chez nous) des mesures climatiques mises en places.&nbsp;
+CERAC	Climate Risk Assesment Center&nbsp;
+CSRD	Corporate Sustainability Reporting Directive
+ADEME	Agence de l'Environnement et de la Maîtrise de l'Énergie<br>Agence française créatrice du Bilan Carbone

@@ -4,249 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "67ea2e463bf43de0",
+        "id": "e72af98726f05566",
         "type": "tabs",
         "children": [
           {
-            "id": "3f0a619bdc41b9e7",
+            "id": "ccd0031772a3d1e8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MA2/INFO-H505/INFO-H505 Cloud Computing — Exam Recap course.md",
+                "file": "MA2/ENVI-F405/0. Vue globale du cours.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "INFO-H505 Cloud Computing — Exam Recap course"
-            }
-          },
-          {
-            "id": "02eef6994238a0da",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H505/Synthèse.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Synthèse"
-            }
-          },
-          {
-            "id": "12cfac119b9135c0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H505/Synthèse.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Synthèse"
-            }
-          },
-          {
-            "id": "367516931d3222bc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/ENVI-F405/7. Conference BCRA (CERAC).md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7. Conference BCRA (CERAC)"
-            }
-          },
-          {
-            "id": "5c4edf30be645eb7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/ENVI-F405/7. Adaptation & Résilience.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7. Adaptation & Résilience"
-            }
-          },
-          {
-            "id": "632c26a30f084a41",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/notes seminaires/03-04-2026.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "03-04-2026"
-            }
-          },
-          {
-            "id": "f8bae6e6c338ce05",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/notes seminaires/06-03-2026.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "06-03-2026"
-            }
-          },
-          {
-            "id": "ee68a85d38856f53",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/notes seminaires/03-04-2026.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "03-04-2026"
-            }
-          },
-          {
-            "id": "39ad7e2e15ad5dac",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/resume/1. Causal Federated Learning For Neuroimaging.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1. Causal Federated Learning For Neuroimaging"
-            }
-          },
-          {
-            "id": "8d5a003eaa5fc347",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/resume/2. GenAI.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2. GenAI"
-            }
-          },
-          {
-            "id": "f7486b801fbafb9e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/resume/3. Brain-computer interfaces ; methods and applications.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "3. Brain-computer interfaces ; methods and applications"
-            }
-          },
-          {
-            "id": "649cc83cdcb45c6f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/notes seminaires/27-02-2026.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "27-02-2026"
-            }
-          },
-          {
-            "id": "90a117199691cb9e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/resume/5. Attribution for Explainability ofBlack-Box ML Models.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "5. Attribution for Explainability ofBlack-Box ML Models"
-            }
-          },
-          {
-            "id": "3af495c2c877d095",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/resume/6. Beyond the algorithm, realizing real value from AI..md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6. Beyond the algorithm, realizing real value from AI."
-            }
-          },
-          {
-            "id": "d914c26f199f802c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/resume/7. Algocracy, FARI and Smart Cities.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7. Algocracy, FARI and Smart Cities"
-            }
-          },
-          {
-            "id": "6810a9f56f93c1bd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/resume/8. Morphogenetic architecture.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "8. Morphogenetic architecture"
-            }
-          },
-          {
-            "id": "934714011cfa94f0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MA2/INFO-H512/resume/9. A Hands-on Introduction to Hierarchical Pattern-BasedSequence Learning.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "9. A Hands-on Introduction to Hierarchical Pattern-BasedSequence Learning"
+              "title": "0. Vue globale du cours"
             }
           }
-        ],
-        "currentTab": 16
+        ]
       }
     ],
     "direction": "vertical"
@@ -409,8 +184,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 385.5,
-    "collapsed": true
+    "width": 385.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -428,44 +202,44 @@
       "obsidian-day-planner:Open Multi-Day View": false
     }
   },
-  "active": "a97ef5a0a886d786",
+  "active": "ccd0031772a3d1e8",
   "lastOpenFiles": [
-    "Recherche_Taff/Smals/Préparation UML.md",
-    "Recherche_Taff/Smals/Propostiotion contrat.md",
-    "Recherche_Taff/Smals",
-    "Recherche_Taff",
-    "Recherche Taff/Smals/Propostiotion contrat.md",
-    "Recherche Taff/Propostiotion contrat.md",
-    "gitignore",
-    "MA2/INFO-H512/resume/9. A Hands-on Introduction to Hierarchical Pattern-BasedSequence Learning.md",
-    "MA2/Master Thesis/Claude Report/ocr_paddleocr_report.md",
-    "MA2/Master Thesis/Claude Report/ocr_evaluation_report.md",
-    "MA2/Master Thesis/Claude Report/evaluation_report YOLO+paddleOCR.md",
-    "MA2/Master Thesis/Claude Report/comparative_analysis.md",
-    "MA2/INFO-H512/notes seminaires/15-05-2026.md",
-    "MA2/INFO-H512/notes seminaires/20-02-2026.md",
-    "MA2/INFO-H512/notes seminaires/22-05-2026.md",
-    "Images/slides.pdf",
-    "MA2/INFO-H512/resume/8. Morphogenetic architecture.md",
-    "MA2/INFO-H512/resume/7. Algocracy, FARI and Smart Cities.md",
-    "Images/CTAI.pdf",
-    "MA2/INFO-H512/resume/6. Beyond the algorithm, realizing real value from AI..md",
-    "Images/Datashift_Lecture-VUB_Current-Trends-in-AI_Responsible-AI.pdf",
-    "MA2/INFO-H512/resume/5. Attribution for Explainability ofBlack-Box ML Models.md",
-    "Images/Attribution for Black-Box Explainability.pdf",
-    "MA2/INFO-H512/notes seminaires/27-02-2026.md",
-    "MA2/INFO-H512/notes seminaires/06-03-2026.md",
-    "MA2/INFO-H512/notes seminaires/03-04-2026.md",
-    "MA2/INFO-H512/resume/4. counterfactuals and fair AI.md",
-    "Images/Current_Trends_in_AI_Counterfactuals.pdf",
-    "MA2/INFO-H512/resume/3. Brain-computer interfaces ; methods and applications.md",
-    "Images/Current_trends_2026_arnau-1 (1).pdf",
-    "MA2/INFO-H512/resume/2. GenAI.md",
-    "Images/Syrtis-_-VUB-20_02.pdf",
-    "MA2/INFO-H512/resume/1. Causal Federated Learning For Neuroimaging.md",
-    "MA2/ENVI-F405/8. Bouleversements climatiques et bouleversements politiques. Conclusion.md",
-    "MA2/ENVI-F405/7. Adaptation & Résilience.md",
-    "MA2/ENVI-F405/7. Conference BCRA (CERAC).md",
+    "MA2/INFO-H501/21 - Classification (CNN).md",
+    "MA2/INFO-H501/00 - Index.md",
+    "MA2/INFO-H501/09 - Filter.md",
+    "MA2/INFO-H501/02 - General Background.md",
+    "MA2/ENVI-F405/1. Réchauffement global, événements climatiques extrêmes , Gouvernance climatique mondiale.md",
+    "MA2/INFO-H501/25 - Celltracking by CNN.md",
+    "MA2/INFO-H501/24 - Segmentation (deep).md",
+    "MA2/INFO-H501/23 - Object Detection.md",
+    "MA2/INFO-H501/22 - Autoencoder.md",
+    "MA2/INFO-H501/20 - Optimization.md",
+    "MA2/INFO-H501/18 - Pooling layer.md",
+    "MA2/INFO-H501/17 - Activation functions.md",
+    "MA2/INFO-H501/16 - Convolutional layer.md",
+    "MA2/INFO-H501/15 - Neural networks.md",
+    "MA2/INFO-H501/14 - Classification.md",
+    "MA2/INFO-H501/13 - Feature extraction.md",
+    "MA2/INFO-H501/12 - Object tracking.md",
+    "MA2/INFO-H501/11 - Detection.md",
+    "MA2/INFO-H501/10 - Segmentation.md",
+    "MA2/INFO-H501/05 - Decision tree.md",
+    "MA2/INFO-H501/04 - Non-Bayesian approaches.md",
+    "MA2/INFO-H501/03 - Bayesian approach.md",
+    "MA2/INFO-H501",
+    "MA2/NFO-H501/25 - Celltracking by CNN.md",
+    "MA2/NFO-H501/24 - Segmentation (deep).md",
+    "MA2/NFO-H501/23 - Object Detection.md",
+    "MA2/NFO-H501/22 - Autoencoder.md",
+    "MA2/NFO-H501",
+    "MA2/Synthese-INFO-H501",
+    "MA2/ENVI-F405/0. Récit interactif du cours.html",
+    "MA2/ENVI-F405/0. Mind map interactive.html",
+    "MA2/ENVI-F405/ENVI-F405_séance 8.txt",
+    "MA2/ENVI-F405/ENVI-F405_séance 7bis (conférence CERAC).txt",
+    "MA2/ENVI-F405/ENVI-F405_séance 7.txt",
+    "MA2/ENVI-F405/ENVI-F405_séance 6.txt",
+    "MA2/ENVI-F405/ENVI-F405_séance 5.txt",
     "Images/Image 2.jpeg",
     "Images/Image.jpeg",
     "Images/Pasted image 20260227132031.png",

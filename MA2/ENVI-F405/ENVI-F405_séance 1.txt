@@ -1,0 +1,55 @@
+#separator:tab
+#html:true
+Key risks&nbsp;	1. Low lying coasts&nbsp;<br>2. Ecosystems<br>3. Infrastructure<br>4. Living standards&nbsp;<br>5. Human Health<br>6. Food security<br>7. Water security<br>8. Peace and mobility&nbsp;
+Qui sont les victimes des risks ?&nbsp;	Repartission tres inegale :&nbsp;<br>- pertes economiques + elevées dans les pays developpés<br>- pertes economiques en fct de la richesse, taux de mortalités sont + elevés dans les pays pauvre/en developpement.
+Gouvernance Climatique&nbsp;	Necessité de prendre en charge un problème planétaire.<br>-&gt; un prblm identifié par la sciences mais fondamentalement politique&nbsp;<br>-&gt; outils de cooperation internationale : interets, avantages et limites
+"Les bouleversements climatiques comme problème
+politique&nbsp;"	"1. Un problème de gouvernance globale<br>&nbsp; &nbsp;""<i>Une
+économie à faible teneur en carbone exige la mise en place d’un système
+d’engagements international effectif qui implique les émetteurs historiques et
+les pays en développement.""</i><br>2.&nbsp;&nbsp;Un probleme structurel&nbsp;<br>&nbsp; &nbsp;Découplage entre croissance économique et emission de GES.&nbsp;<br>&nbsp; &nbsp;Quelles dynamiques sociopolitiques necessaires pour enclencher la&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;réorentation des économies.<br>3. Un problème systémique de rapports Nord-Sud<br>&nbsp; &nbsp;Deux
+priorités se télescopent : la limitation des émissions mondiales de&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GES et le
+développement des pays du Sud qui, automatiquement, les&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;accroît.<br>4. La
+stabilisation du climat est la première question à solidarité obligatoire qui
+englobe toute la population humaine.<br>5. Les
+négociations sur les moyens de lutter contre les bouleversements climatiques
+sont en fait des négociations de mise en place d’une nouvelle gouvernance
+mondiale.<br>&nbsp; &nbsp;Une
+gouvernance qui devrait faire la part belle à des mécanismes de&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;solidarité et
+d’équité."
+Où en sommes nous ?&nbsp;	"<img src=""Capture d’écran 2026-06-09 à 11.32.20.png""><img src=""Capture d’écran 2026-06-09 à 11.32.07.png""><br>"
+Acteurs institutionnels	CCNUCC, COP&nbsp;<br>UE&nbsp;<br>Gouvernements nationaux, parlements, regions, ...<br>Nouvelles instances (assemblées citoyennes)<br>GIEC&nbsp;
+Acteurs Non-Institutionnels&nbsp;	Société civile organisée (ONGs)<br>Mouvements sociaux<br>Contentieux juridique&nbsp;<br>Citoyen.ne.s&nbsp;<br>Entreprises (privé)
+Timeline 1979&nbsp;	"<b>Premiere conference sur le climat organisée a Genève.</b>&nbsp;<br><div>Le phénomène du
+changement climatique est reconnu pour la première fois
+comme étant un grave problème de portée
+mondiale, lors de la première conférence
+mondiale sur le climat tenue à Genève sous les auspices entre autres de
+l’Organisation météorologique
+mondiale (OMM) et du Programme des Nations unies pour l’environnement (PNUE).&nbsp;</div>"
+Timeline 1987&nbsp;	"<b>Rapport Brundtland ""our common future""<br></b><div>origines du développement durable. </div> <div></div> “Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs” (United Nations, 1987).&nbsp;<br>"
+Timeline 1988	<b>Conférence de Toronto et création du GIEC&nbsp;</b><br><div>La conférence de Toronto lance un premier appel en faveur d’objectifs concrets de réduction des émissions de GES.</div> <div>L’OMM et le PNUE mettent sur pied le GIEC, avec pour mission de fournir périodiquement aux décideurs politiques une analyse objective et impartiale des connaissances scientifiques, techniques et socio-économiques disponibles au sujet du changement climatique&nbsp;</div>
+Timeline 1992&nbsp;	"<b>Rio de Janeiro CCNUCC&nbsp;</b><br><div>La convention-cadre des Nations unies sur
+les changements climatiques (CCNUCC adoptée avec
+pour objectif de « stabiliser les concentrations de gaz à effet de serre dans
+l’atmosphère à un niveau qui empêche toute perturbation anthropique
+dangereuse du système climatique » (CCNUCC, 1992, art. 2). </div>
+<div>Entrée en vigueur en 1994 et aujourd’hui ratifiée par 196 Etats et l’Union européenne</div>"
+CCNUCC	"<b>Convention Cadre des Nations Unies sur le Chagement Climatique&nbsp;</b><br>Entre en vigueur en 1994 et ratifiée par 196 états et l'UE&nbsp;<br><b>Objectifs</b> : Stabiliser les concentrations de GES dans l'ATM a un niveau qui empeche toute perturbation anthropique dangereuse du systeme climatique.&nbsp;<br><b>Principe :&nbsp;</b><br>- prise de décisions en fonctions des capacités de chacuns (équité).<br>-&nbsp;l'absence de certitude scientifique absolue ne doit pas servir de prétexte pour différer l'adoption de telles mesures.<br><b>Engagement :&nbsp;<br></b>- Commun : Publication de ""communication nationales"", mise en oeuvre de programmes nationaux (atténuation et adaptation).&nbsp;<br>- Pour les pays developpés: soutient financier et technologique aux autres.&nbsp;&nbsp;"
+Timeline 1995&nbsp;	1<sup>ère</sup>&nbsp;COP (Conférence of Parties) établie par le CCNUCC à Berlin (2<sup>ème</sup>&nbsp;rapport GIEC)
+Timeline 1997&nbsp;	"<b>Protocole de Kyoto&nbsp;<br></b><div>Art. 3.1 (engagements
+des pays développés): <span style=""font-style: italic;"">«&nbsp;</span><span style=""font-style: italic;"">réduire le total de leurs émissions de
+GES d’au moins 5% par rapport à 1990 au cours de la période 2008-2012.&nbsp;»</span></div><div>Objectifs chiffrés</div><div>Sanctions&nbsp;</div><div>Mécanismes de flexibilité : censé garantir que les réductions seront faites là où elles sont economiquement les plus efficaces.&nbsp;</div><br>"
+Fiasco Protocole de Kyoto	8 ans pour qu'il entre en vigueur (2005)<br>USA ne ratifie pas (36% des émissions en 1990)<br>141 pays dont seulement 36 industrialisés (les autres doivent juste faire des inventaires de leurs emissions)&nbsp;<br>Objectifs tres limités, individuels<br>Couverture insuffisante<br>Règles genereuse pour les activités forestieres et gestion du sol (pour ratifier le Japon, Russie, Canada)<br>En pratique, aucune sanction
+Timeline 2009	<b>COP15 Copenhague&nbsp;</b><br><div>L’échec de la COP devant succédée à Kyoto. </div> <div>MAIS première mention objectif des 2°C&nbsp;</div>
+Timeline 2015	"<b>COP21 Accords de Paris<br></b><div>•Art. 2.1a (objectif de température) : <span style=""font-style: italic;"">«&nbsp;</span><span style=""font-style: italic;"">contenir l'élévation de température
+moyenne de la planète nettement en dessous de 2°C par rapport aux niveaux
+préindustriels et poursuivre l'action menée pour limiter cette élévation à
+1,5°C par, étant entendu que cela réduirait sensiblement les risques.&nbsp;»</span></div><div><div>•Art. 4 (objectif de réduction des
+émissions) : <span style=""font-style: italic;"">«&nbsp;</span><span style=""font-style: italic;"">parvenir au plafonnement mondial
+des émissions de GES dans les meilleurs délais, étant entendu que le
+plafonnement prendra davantage de temps pour les pays en développement, et
+opérer des réductions rapides par la suite conformément aux meilleures données
+scientifiques disponibles de façon à parvenir à un équilibre entre les
+émissions par les sources et les absorptions par les puits de GES au cours de
+la 2</span><span style=""font-style: italic;"">ème</span><span style=""font-style: italic;""> moitié du siècle.&nbsp;</span></div></div><div><b>Succès ?&nbsp;</b></div><div>- Ratifié par 194 états&nbsp;</div><div>- atteindre la neutralité carbone&nbsp;</div><div>- équilibre général de l'accord (équité)</div><div>- Transparence et inclusivité.&nbsp;</div><div><b>Mais</b></div><div>- Pas réellement contraignant&nbsp;</div><div>- Pas de sanctions<br>États devront soumettre des ""nationally determined contributions – NDCs""&nbsp; tous les 5 ans. Et ensuite il y aura un bilan mondial (Global Stocktake) tous les 5 ans aussi.&nbsp;</div>"
